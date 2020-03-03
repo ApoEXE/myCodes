@@ -6,7 +6,8 @@
 # __maintainer__ = "Ronie Martinez"
 # __email__ = "ronmarti18@gmail.com"
 import json
-
+import serial
+import threading
 import time
 import os
 path = '/Users/jav/'
@@ -16,8 +17,8 @@ from datetime import datetime
 from flask import Flask, Response, render_template, request, session
 import csv
 app = Flask(__name__)
-from werkzeug.middleware.proxy_fix import ProxyFix
-app.wsgi_app = ProxyFix(app.wsgi_app)
+
+
 
 
 
@@ -38,6 +39,7 @@ def index():
 def chart_data1():
     def generate_random_data():
         global date1
+
         with open('/Users/jav/myCodes/tpms' + str(1) + '.csv', 'r') as csvfile:
             plots = csv.reader(csvfile, delimiter=',')
 
@@ -151,8 +153,26 @@ def chart_data6():
 
 
 def Download_Csv():
-    os.system('scp -i ' + path + 'system_key root@192.168.3.250:/sdcard/tpms* ' + path + 'myCodes/')
+    while True:
+        os.system('scp -i ' + path + 'system_key root@192.168.3.250:/sdcard/tpms* ' + path + 'myCodes/')
+        time.sleep(30)
 
+
+def toThread():
+    ser = serial.Serial('/dev/cu.usbserial', timeout=None, baudrate=9600, xonxoff=False, rtscts=False, dsrdtr=False)
+    ser.flushInput()
+
+    while True:
+        f = open("datalogReceptor.txt", "a+")
+        info = ser.readline()
+        f.write(info.decode("utf-8"))
+        print(info.decode("utf-8"))
+    f.close()
 
 if __name__ == '__main__':
+
+    x = threading.Thread(target=toThread)
+    x.start()
+    y = threading.Thread(target=Download_Csv)
+    y.start()
     app.run(debug=True, threaded=True, host= '0.0.0.0', port=80)

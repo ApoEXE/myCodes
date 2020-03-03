@@ -1,0 +1,44 @@
+
+incoming from slave 0
+What came CAN rx  ca 00 00 00 00 00 00 00 
+RESET MICRO
+
+
+TPMS RECEIVER VERSION: V1.0.19
+SPI Master Init DONE
+radio chip si43 55 
+Chip revision: 11 
+RADIO SETUP DONE
+MASTER RECEPTOR
+Time minutes: 0
+flag  1
+cnt2 dead counter saved: 138.0 
+tim2 saved: 65534.0 
+TxFailed 0
+tim2: 65534.0 
+
+incoming from slave 0
+What came CAN rx  ca 00 00 00 00 00 00 00 
+RESET MICRO
+
+
+TPMS RECEIVER VERSION: V1.0.19
+SPI Master Init DONE
+radio chip si43 55 
+Chip revision: 11 
+RADIO SETUP DONE
+MASTER RECEPTOR
+Time minutes: 0
+flag  1
+cnt2 dead counter saved: 173.0 
+tim2 saved: 65534.0 
+TxFailed 0
+tim2: 65534.0 
+MASTER EEPROM ID
+1 91 4f 00 01 87 48 5a f9 01 00  5
+2 8c 4e 00 01 87 48 5a 8a 01 00  4
+3 90 4f 00 01 87 48 5a 7d 01 00  7
+4 8e 4f 00 01 87 48 5b 50 01 00  12
+5 8e 50 00 01 87 48 75 1a 00 00  6
+6 8e 4e 00 01 87 48 5b 68 01 00  6
+Time minutes: 1
