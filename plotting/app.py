@@ -10,7 +10,8 @@ import serial
 import threading
 import time
 import os
-path = '/Users/jav/'
+path = '/home/ubuntu'
+device = '/dev/ttyUSB0'
 from datetime import datetime
 
 
@@ -40,7 +41,7 @@ def chart_data1():
     def generate_random_data():
         global date1
 
-        with open('/Users/jav/myCodes/tpms' + str(1) + '.csv', 'r') as csvfile:
+        with open(path+'myCodes/tpms' + str(1) + '.csv', 'r') as csvfile:
             plots = csv.reader(csvfile, delimiter=',')
 
             for row in plots:
@@ -59,7 +60,7 @@ def chart_data1():
 def chart_data2():
     def generate_random_data():
         global date2
-        with open('/Users/jav/myCodes/tpms' + str(2) + '.csv', 'r') as csvfile:
+        with open(path+'myCodes/tpms' + str(2) + '.csv', 'r') as csvfile:
             plots = csv.reader(csvfile, delimiter=',')
 
             for row in plots:
@@ -78,7 +79,7 @@ def chart_data2():
 def chart_data3():
     def generate_random_data():
         global date6
-        with open('/Users/jav/myCodes/tpms' + str(3) + '.csv', 'r') as csvfile:
+        with open(path+'myCodes/tpms' + str(3) + '.csv', 'r') as csvfile:
             plots = csv.reader(csvfile, delimiter=',')
 
             for row in plots:
@@ -97,7 +98,7 @@ def chart_data3():
 def chart_data4():
     def generate_random_data():
         global date4
-        with open('/Users/jav/myCodes/tpms' + str(4) + '.csv', 'r') as csvfile:
+        with open(path+'myCodes/tpms' + str(4) + '.csv', 'r') as csvfile:
             plots = csv.reader(csvfile, delimiter=',')
 
             for row in plots:
@@ -116,7 +117,7 @@ def chart_data4():
 def chart_data5():
     def generate_random_data():
         global date5
-        with open('/Users/jav/myCodes/tpms' + str(5) + '.csv', 'r') as csvfile:
+        with open(path+'myCodes/tpms' + str(5) + '.csv', 'r') as csvfile:
             plots = csv.reader(csvfile, delimiter=',')
 
             for row in plots:
@@ -135,7 +136,7 @@ def chart_data5():
 def chart_data6():
     def generate_random_data():
         global date6
-        with open('/Users/jav/myCodes/tpms' + str(6) + '.csv', 'r') as csvfile:
+        with open(path+'myCodes/tpms' + str(6) + '.csv', 'r') as csvfile:
             plots = csv.reader(csvfile, delimiter=',')
 
             for row in plots:
@@ -159,7 +160,7 @@ def Download_Csv():
 
 
 def toThread():
-    ser = serial.Serial('/dev/cu.usbserial', timeout=None, baudrate=9600, xonxoff=False, rtscts=False, dsrdtr=False)
+    ser = serial.Serial(device, timeout=None, baudrate=9600, xonxoff=False, rtscts=False, dsrdtr=False)
     ser.flushInput()
 
     while True:
