@@ -10,7 +10,7 @@ import serial
 import threading
 import time
 import os
-path = '/home/ubuntu'
+path = '/home/ubuntu/'
 device = '/dev/ttyUSB0'
 from datetime import datetime
 
