@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GetsDectec</string>
+    <string name="tv_data">0  0  0  0  0  0</string>
+    <string name="et_ip">192.168.1.251</string>
+    <string name="et_port">5000</string>
+    <string name="btn_open">Open</string>
+    <string name="btn_close">Close</string>
+    <string name="tv_1">1</string>
+    <string name="tv_2">2</string>
+    <string name="tv_3">3</string>
+    <string name="tv_4">4</string>
+    <string name="tv_5">5</string>
+    <string name="tv_6">6</string>
+</resources>

@@ -1,0 +1,7 @@
+Info: Front side (top side) place file: “/Users/javier/pcb/poePoweredDevice-PD/GERBER-A01003-POEPD/poePoweredDevice-PD-top.pos”.
+Info: Component count: 19.
+Info: Back side (bottom side) place file: “/Users/javier/pcb/poePoweredDevice-PD/GERBER-A01003-POEPD/poePoweredDevice-PD-bottom.pos”.
+Info: Component count: 35.
+Info: Full component count: 54
+
+Component Placement File generation OK.

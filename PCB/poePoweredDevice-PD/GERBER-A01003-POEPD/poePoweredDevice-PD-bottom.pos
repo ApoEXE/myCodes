@@ -1,0 +1,41 @@
+### Module positions - created on Wednesday, 18 September 2019 at 11:53:35 ###
+### Printed by Pcbnew version kicad (5.1.4-0-10_14)
+## Unit = mm, Angle = deg.
+## Side : bottom
+# Ref     Val         Package                                      PosX       PosY       Rot  Side
+C1        1uF         C_1210_3225Metric                       -167.9000  -105.2480  270.0000  bottom
+C3        1uF         C_1210_3225Metric                       -164.2000  -105.2480  270.0000  bottom
+C4        1uF         C_1210_3225Metric                       -160.7000  -105.2480  270.0000  bottom
+C6        100uF       C_1210_3225Metric                       -169.9768  -137.7696   90.0000  bottom
+C7        470pF       C_0805_2012Metric                       -177.0380  -133.0452  270.0000  bottom
+C9        3.3nF       C_0805_2012Metric                       -167.5892  -131.5466  180.0000  bottom
+C10       1nF         C_0603_1608Metric                       -176.4760  -102.6160  270.0000  bottom
+C11       1nF         C_0603_1608Metric                       -179.3240  -100.0760    0.0000  bottom
+C12       1nF         C_0603_1608Metric                       -174.7640   -99.0600   90.0000  bottom
+C13       1nF         C_0603_1608Metric                       -171.7000  -100.0760  180.0000  bottom
+C14       1nF         C_0603_1608Metric                       -174.7520  -102.6160   90.0000  bottom
+C15       1nF         C_0603_1608Metric                       -179.3240  -102.1080  180.0000  bottom
+C16       1nF         C_0603_1608Metric                       -176.7840   -99.0600  270.0000  bottom
+C17       1nF         C_0603_1608Metric                       -171.7000  -102.1000    0.0000  bottom
+C18       0.1uF       C_0805_2012Metric                       -167.6000  -109.3520  180.0000  bottom
+D1        DIODE       D_SOD-123                               -180.9000  -108.1000  270.0000  bottom
+D2        DFLT30A-7   DFLT30A-7                               -183.7000  -104.8000  180.0000  bottom
+D3        PDS1040     POWERDI-5                               -180.5940  -132.0800    0.0000  bottom
+D4        LED         D_0603_1608Metric                       -183.4000  -107.4000   90.0000  bottom
+D5        LED         D_0603_1608Metric                       -162.4076  -132.2324   90.0000  bottom
+G***      LOGO        MS4M_15x5                               -178.4604  -125.0188  180.0000  bottom
+L2        330         L_0805_2012Metric                       -168.2000   -99.5680  270.0000  bottom
+L3        330         L_0805_2012Metric                       -171.7040   -95.9335  270.0000  bottom
+L4        330         L_0805_2012Metric                       -173.7360   -92.3775  270.0000  bottom
+L5        330         L_0805_2012Metric                       -175.7680   -88.8215  270.0000  bottom
+R1        330         R_0805_2012Metric                       -160.5280  -132.2601   90.0000  bottom
+R2        49.9k       R_0805_2012Metric                       -185.3000  -107.6000   90.0000  bottom
+R3        48.7        R_0805_2012Metric                       -170.9000  -105.4000   90.0000  bottom
+R4        24.3k       R_0805_2012Metric                       -171.3000  -109.3520  180.0000  bottom
+R5        36.5k       R_0805_2012Metric                       -169.9768  -133.9596  180.0000  bottom
+R6        12.1k       R_0805_2012Metric                       -164.5920  -131.0132   90.0000  bottom
+R8        0           R_0805_2012Metric                       -167.0812  -128.6510   90.0000  bottom
+R10       10          R_0805_2012Metric                       -177.0888  -136.6520   90.0000  bottom
+U1        Si3402B     QFN-20-1EP_5x5mm_P0.65mm_EP3.35x3.35mm  -176.2000  -107.6000   90.0000  bottom
+U3        TLV431-DBZ  SOT-23                                  -166.2938  -134.6708  270.0000  bottom
+## End

@@ -1,0 +1,25 @@
+### Module positions - created on Wednesday, 18 September 2019 at 11:53:35 ###
+### Printed by Pcbnew version kicad (5.1.4-0-10_14)
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val             Package                                           PosX       PosY       Rot  Side
+C19       1nF             C_1806_4516Metric_Pad1.57x1.80mm_HandSolder   187.2996  -121.4628   90.0000  top
+C20       1nF             C_1806_4516Metric_Pad1.57x1.80mm_HandSolder   189.7888  -121.4628   90.0000  top
+C21       15nF            C_0805_2012Metric                             160.0900  -112.9430  270.0000  top
+C22       0.1uF           C_0805_2012Metric                             162.1900  -112.9430   90.0000  top
+D8        D_Schottky      D_SMA                                         160.0200  -106.8960  270.0000  top
+D9        D_Schottky      D_SMA                                         172.2000  -106.9000  270.0000  top
+D10       D_Schottky      D_SMA                                         176.2760  -106.8960  270.0000  top
+D11       D_Schottky      D_SMA                                         188.4680  -106.8960  270.0000  top
+D12       D_Schottky      D_SMA                                         164.0840  -106.8960   90.0000  top
+D13       D_Schottky      D_SMA                                         168.1480  -106.8960   90.0000  top
+D14       D_Schottky      D_SMA                                         180.3400  -106.8960   90.0000  top
+D15       D_Schottky      D_SMA                                         184.4040  -106.8960   90.0000  top
+L1        1uH             DO1608C-102MLC                                174.1000  -139.2480   90.0000  top
+R7        2.05k           R_0603_1608Metric                             169.4000  -130.1480  180.0000  top
+R11       4.99k           R_0805_2012Metric                             164.6900  -112.8430  270.0000  top
+R12       0               R_0805_2012Metric                             166.7900  -112.8430   90.0000  top
+T1        FA2924-AL       FA2924-ALD                                    174.2000  -114.3000  270.0000  top
+U2        SFH617A-2X009T  VO618A-3X017T                                 171.0944  -125.5776   90.0000  top
+U4        H6062FNLT       Pulse_H6062FNLT                               174.2900   -94.1860  270.0000  top
+## End

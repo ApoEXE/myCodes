@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name poePoweredDevice-PD-rescue)(type Legacy)(uri ${KIPRJMOD}/poePoweredDevice-PD-rescue.lib)(options "")(descr ""))
+)
