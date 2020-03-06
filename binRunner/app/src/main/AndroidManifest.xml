@@ -3,32 +3,24 @@
     package="com.mss.binrunner">
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-
-        android:theme="@android:style/Theme.Translucent.NoTitleBar">
-
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
-        <receiver android:enabled="true" android:name=".StartMyServiceAtBootReceiver"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
-
+        android:icon="@drawable/icon"
+        android:label="@string/app_name">
+        <receiver
+            android:name=".StartMyServiceAtBootReceiver"
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
+    <service android:name=".ServiceBinrunner"
+        android:enabled="true"
+        android:exported="true">
+        <intent-filter>
+            <action android:name=".ServiceBinrunner" />
+        </intent-filter>
+    </service>
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />

@@ -10,161 +10,95 @@ import serial
 import threading
 import time
 import os
-path = '/home/ubuntu/'
-device = '/dev/ttyUSB0'
 from datetime import datetime
-
-
+from livereload import Server, shell
 from flask import Flask, Response, render_template, request, session
+from flask_caching import Cache
 import csv
+import csvData
 app = Flask(__name__)
 
 
+#DECLARATIONS
+#path = '/home/ubuntu/'
+path = '/Users/jav/'
+device = '/dev/ttyUSB0'
 
 
+downloaded = False
 
-date1 = []
-date2 = []
-date3 = []
-date4 = []
-date5 = []
-date6 = []
+_date = []
+_temp = []
+
+increment = 0
+
+_report = {
+    "Sensor":0,
+    "difftimeSensor": 0,
+    "totalpointsSensor":0,
+    "biggestTimeSensor":0,
+    "smallestTimeSensor":0,
+    "totalpointsDead":0,
+    "difftimeDead":0,
+    "difftimeClean":0,
+    "totalpointsClean":0,
+    "totalpointsTxFail":0
+}
+
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html',report=_report)
 
 
 @app.route('/chart-data1')
 def chart_data1():
+    print("DOWNLOADING")
+    #os.system('scp -i ' + path + 'system_key root@192.168.3.250:/sdcard/tpms* ' + path + 'myCodes/')
+    reporting()
     def generate_random_data():
-        global date1
+        global _date,_temp, increment
+        #print('time: ', _date[0][x], 'value: ', _temp[0][x])
+        #json_data = json.dumps({'time': _date[0][x], 'value': _temp[0][x]})
+        #time.sleep(0.005)
+        if increment<len(_date):
+            json_data = json.dumps({'time': _date[0][increment], 'value': _temp[0][increment]})
+            increment += 1
+            yield f"data:{json_data}\n\n"  # like a return
+            print(increment)
 
-        with open(path+'myCodes/tpms' + str(1) + '.csv', 'r') as csvfile:
-            plots = csv.reader(csvfile, delimiter=',')
 
-            for row in plots:
-                try:
-                    if (date1.index(row[0])):
-                        pass
-                except:
-                    date1.append(row[0])
-                    json_data = json.dumps({'time': row[0], 'value': row[1]})
-                    yield f"data:{json_data}\n\n"  # like a return
-                    time.sleep(0.05)
 
     return Response(generate_random_data(), mimetype='text/event-stream')
-
-@app.route('/chart-data2')
-def chart_data2():
-    def generate_random_data():
-        global date2
-        with open(path+'myCodes/tpms' + str(2) + '.csv', 'r') as csvfile:
-            plots = csv.reader(csvfile, delimiter=',')
-
-            for row in plots:
-                try:
-                    if (date2.index(row[0])):
-                        pass
-                except:
-                    date2.append(row[0])
-                    json_data = json.dumps({'time': row[0], 'value': row[1]})
-                    yield f"data:{json_data}\n\n"  # like a return
-                    time.sleep(0.05)
-
-    return Response(generate_random_data(), mimetype='text/event-stream')
-
-@app.route('/chart-data3')
-def chart_data3():
-    def generate_random_data():
-        global date6
-        with open(path+'myCodes/tpms' + str(3) + '.csv', 'r') as csvfile:
-            plots = csv.reader(csvfile, delimiter=',')
-
-            for row in plots:
-                try:
-                    if (date3.index(row[0])):
-                        pass
-                except:
-                    date3.append(row[0])
-                    json_data = json.dumps({'time': row[0], 'value': row[1]})
-                    yield f"data:{json_data}\n\n"  # like a return
-                    time.sleep(0.05)
-
-    return Response(generate_random_data(), mimetype='text/event-stream')
-
-@app.route('/chart-data4')
-def chart_data4():
-    def generate_random_data():
-        global date4
-        with open(path+'myCodes/tpms' + str(4) + '.csv', 'r') as csvfile:
-            plots = csv.reader(csvfile, delimiter=',')
-
-            for row in plots:
-                try:
-                    if (date4.index(row[0])):
-                        pass
-                except:
-                    date4.append(row[0])
-                    json_data = json.dumps({'time': row[0], 'value': row[1]})
-                    yield f"data:{json_data}\n\n"  # like a return
-                    time.sleep(0.05)
-
-    return Response(generate_random_data(), mimetype='text/event-stream')
-
-@app.route('/chart-data5')
-def chart_data5():
-    def generate_random_data():
-        global date5
-        with open(path+'myCodes/tpms' + str(5) + '.csv', 'r') as csvfile:
-            plots = csv.reader(csvfile, delimiter=',')
-
-            for row in plots:
-                try:
-                    if (date5.index(row[0])):
-                        pass
-                except:
-                    date5.append(row[0])
-                    json_data = json.dumps({'time': row[0], 'value': row[1]})
-                    yield f"data:{json_data}\n\n"  # like a return
-                    time.sleep(0.05)
-
-    return Response(generate_random_data(), mimetype='text/event-stream')
-
-@app.route('/chart-data6')
-def chart_data6():
-    def generate_random_data():
-        global date6
-        with open(path+'myCodes/tpms' + str(6) + '.csv', 'r') as csvfile:
-            plots = csv.reader(csvfile, delimiter=',')
-
-            for row in plots:
-                try:
-                    if (date6.index(row[0])):
-                        pass
-                except:
-                    date6.append(row[0])
-                    json_data = json.dumps({'time': row[0], 'value': row[1]})
-                    yield f"data:{json_data}\n\n"  # like a return
-                    time.sleep(0.05)
-
-    return Response(generate_random_data(), mimetype='text/event-stream')
-
 
 
 def Download_Csv():
     while True:
         os.system('scp -i ' + path + 'system_key root@192.168.3.250:/sdcard/tpms* ' + path + 'myCodes/')
-        time.sleep(30)
+        time.sleep(120)
+
+def reporting():
+    global _date, _temp, _report
+    print("REPORTING")
+    csvData.extract_all(path)
+    _report,_date,_temp =csvData.getData()
+        #print(len(_date[0]))
+        #for x in range(6):
+         #for y in range(len(_date[x])):
+            #print('2 dimention list: ', _date[x][y], ' len(',x+1,'): ',len(_date[x]), ' temp: ',_temp[x][y])
+    time.sleep(60)
 
 
-def toThread():
+
+
+def serialCom():
     ser = serial.Serial(device, timeout=None, baudrate=9600, xonxoff=False, rtscts=False, dsrdtr=False)
     ser.flushInput()
 
     while True:
         f = open("datalogReceptor.txt", "a+")
+
         info = ser.readline()
         f.write(info.decode("utf-8"))
         print(info.decode("utf-8"))
@@ -172,8 +106,12 @@ def toThread():
 
 if __name__ == '__main__':
 
-    x = threading.Thread(target=toThread)
-    x.start()
-    y = threading.Thread(target=Download_Csv)
-    y.start()
-    app.run(debug=True, threaded=True, host= '0.0.0.0', port=80)
+    app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
+    #server = Server(app.wsgi_app)
+    #server.serve()
+
+    #app.run(debug=True, threaded=True, host= '0.0.0.0', port=80)
+
+
+
+

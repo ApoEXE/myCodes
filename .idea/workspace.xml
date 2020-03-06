@@ -2,7 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3aee951-0900-4847-8b51-b5a7c77e93cf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binRunner/Engineering_icons-17-512.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binRunner/.idea/codeStyles/Project.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binRunner/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binRunner/app/src/main/java/com/mss/binrunner/ServiceBinrunner.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binRunner/app/src/main/res/drawable/icon.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plotting/csvData.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plotting/static/chart.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plotting/templates/layout.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plotting/templates/report.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpmsLog.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/.idea/gradle.xml" afterPath="$PROJECT_DIR$/binRunner/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/binRunner/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/app/src/main/java/com/mss/binrunner/MainActivity.java" afterPath="$PROJECT_DIR$/binRunner/app/src/main/java/com/mss/binrunner/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/app/src/main/java/com/mss/binrunner/StartMyServiceAtBootReceiver.java" afterPath="$PROJECT_DIR$/binRunner/app/src/main/java/com/mss/binrunner/StartMyServiceAtBootReceiver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/binRunner/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/build.gradle" afterPath="$PROJECT_DIR$/binRunner/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/binRunner/gradle/wrapper/gradle-wrapper.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datalogReceptor.txt" afterPath="$PROJECT_DIR$/datalogReceptor.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plotting/app.py" afterPath="$PROJECT_DIR$/plotting/app.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plotting/templates/index.html" afterPath="$PROJECT_DIR$/plotting/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plotting/templates/sensor1.html" afterPath="$PROJECT_DIR$/plotting/templates/sensor1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readingSerial.py" afterPath="$PROJECT_DIR$/readingSerial.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms1.csv" afterPath="$PROJECT_DIR$/tpms1.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms2.csv" afterPath="$PROJECT_DIR$/tpms2.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms3.csv" afterPath="$PROJECT_DIR$/tpms3.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms4.csv" afterPath="$PROJECT_DIR$/tpms4.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms5.csv" afterPath="$PROJECT_DIR$/tpms5.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms6.csv" afterPath="$PROJECT_DIR$/tpms6.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpmsEvent.txt" afterPath="$PROJECT_DIR$/tpmsEvent.txt" />
     </list>
     <ignored path="myCodes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,12 +53,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="summaryTPMS.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/summaryTPMS.py">
+      <file leaf-file-name="csvData.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plotting/csvData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="75" selection-end-column="100" />
-              <folding />
+            <state relative-caret-position="765">
+              <caret line="151" column="20" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readingSerial.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/readingSerial.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -38,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/plotting/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="e#235#246#0" expanded="true" />
               </folding>
@@ -46,17 +89,46 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="chart.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plotting/static/chart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plotting/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="45" />
+            <state relative-caret-position="231">
+              <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tpmsEvent.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpmsEvent.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,6 +143,14 @@
         <option value="$PROJECT_DIR$/rtplotting/application.py" />
         <option value="$PROJECT_DIR$/rtplotting/app.py" />
         <option value="$PROJECT_DIR$/rtplotting/templates/index.html" />
+        <option value="$PROJECT_DIR$/plotting/templates/report.html" />
+        <option value="$PROJECT_DIR$/plotting/templates/layout.html" />
+        <option value="$PROJECT_DIR$/readingSerial.py" />
+        <option value="$PROJECT_DIR$/plotting/templates/sensor1.html" />
+        <option value="$PROJECT_DIR$/plotting/templates/chart.js" />
+        <option value="$PROJECT_DIR$/plotting/static/chart.js" />
+        <option value="$PROJECT_DIR$/plotting/csvData.py" />
+        <option value="$PROJECT_DIR$/plotting/templates/index.html" />
         <option value="$PROJECT_DIR$/plotting/app.py" />
       </list>
     </option>
@@ -91,7 +171,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -109,8 +189,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -161,21 +239,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myCodes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="myCodes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plotting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/rtplotting" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/rtplotting/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/plotting/static" />
+      <recent name="$PROJECT_DIR$/rtplotting" />
     </key>
   </component>
   <component name="RunManager">
@@ -391,6 +491,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c3aee951-0900-4847-8b51-b5a7c77e93cf" name="Default" comment="" />
@@ -425,6 +528,14 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -433,6 +544,42 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/summaryTPMS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/csvData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="40" selection-end-column="25" />
+          <folding>
+            <element signature="e#235#246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/summaryTPMS.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -460,18 +607,78 @@
     <entry file="file://$PROJECT_DIR$/rtplotting/style.css" />
     <entry file="file://$PROJECT_DIR$/rtplotting/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/rtplotting/app.py" />
+    <entry file="file://$PROJECT_DIR$/plotting/templates/report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/summaryTPMS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="75" selection-end-column="100" />
+        <state relative-caret-position="150">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readingSerial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/templates/sensor1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/static/chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/csvData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="151" column="20" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plotting/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="45" />
+        <state relative-caret-position="231">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpmsEvent.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -479,7 +686,7 @@
     <entry file="file://$PROJECT_DIR$/plotting/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="e#235#246#0" expanded="true" />
           </folding>

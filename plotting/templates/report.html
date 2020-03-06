@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content1 %}
+    <ul>
+
+        {% for x in range(6)%}
+        <li>Sensor:{{ (x+1)}}</li>
+        <li>average diff time: {{report[x][1]}}</li>
+        <li>Total Points {{report[x][2]}}</li>
+        <li>Biggest: {{report[x][3]}}</li>
+        <li>Smallest: {{report[x][4]}}</li>
+        <li>Total dead: {{report[x][5]}}</li>
+        <li>Total Cleaning: {{report[x][6]}}</li>
+        <li>Total TxFailed: {{report[x][7]}}</li>
+        <h1>---------------------------------------</h1>
+
+        {%endfor%}
+    </ul>
+{% endblock content1 %}
