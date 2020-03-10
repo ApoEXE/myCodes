@@ -12,10 +12,9 @@
                 <th>Total Cleaning</th>
                 <th>Total TxFailed</th>
             </tr>
-            {% for x in range(6)%}
+            {% for x in range(1,6)%}
             <tr>
-                <td>{{ (x+1)}}</td>
-                {% if report[x][1] > 0: %}
+                <td>{{ (x)}}</td>
                     <td>{{report[x][1]}}</td>
                     <td>{{report[x][2]}}</td>
                     <td>{{report[x][3]}}</td>
@@ -23,9 +22,9 @@
                     <td>{{report[x][5]}}</td>
                     <td>{{report[x][7]}}</td>
                     <td>{{report[x][9]}}</td>
-                {% endif %}
+
             </tr>
-            {%endfor%}
+            {% endfor %}
         </table>
 
 
@@ -34,6 +33,41 @@
 {% endblock content1 %}
 
 {% block content2 %}
+
+         <script type="text/javascript" {{ url_for('static', filename='report.js')}}></script>
+         <script type="text/javascript">
+            data = myFunc({{data|tojson}})
+         </script>
+                    <table>
+            <tr>
+                <th>Sensor</th>
+                <th>average diff time</th>
+                <th>Total Points</th>
+                <th>Biggest</th>
+                <th>Smallest</th>
+                <th>Total dead</th>
+                <th>Total Cleaning</th>
+                <th>Total TxFailed</th>
+            </tr>
+            {% for x in range(1,6)%}
+            <tr>
+                <td>{{ (x)}}</td>
+                    <td>{{data[x][1]}}</td>
+                    <td>{{data[x][2]}}</td>
+                    <td>{{data[x][3]}}</td>
+                    <td>{{data[x][4]}}</td>
+                    <td>{{data[x][5]}}</td>
+                    <td>{{data[x][7]}}</td>
+                    <td>{{data[x][9]}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+
+{% endblock content2 %}
+
+
+{% block content3 %}
 <div>
     <div class="container">
     <div class="row">
@@ -55,4 +89,4 @@
 <script src="{{ url_for('static', filename='chart.js') }}">
     var check = 1;
 </script>
-{% endblock content2 %}
+{% endblock content3 %}

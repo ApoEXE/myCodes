@@ -2,36 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3aee951-0900-4847-8b51-b5a7c77e93cf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binRunner/Engineering_icons-17-512.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binRunner/.idea/codeStyles/Project.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binRunner/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binRunner/app/src/main/java/com/mss/binrunner/ServiceBinrunner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binRunner/app/src/main/res/drawable/icon.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plotting/csvData.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plotting/static/chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plotting/templates/layout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plotting/templates/report.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tpmsLog.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/typescript-compiler.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/app.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/main-es2015.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/main-es2015.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/main-es5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/main-es5.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/polyfills-es2015.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/polyfills-es2015.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/polyfills-es5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/polyfills-es5.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/runtime-es2015.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/runtime-es2015.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/runtime-es5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/runtime-es5.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/styles-es2015.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/styles-es2015.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/styles-es5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/styles-es5.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/vendor-es2015.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/vendor-es2015.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/vendor-es5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/static/vendor-es5.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/angular-fask/templates/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/plotting/static/report.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tpmsEvent.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tpmsLog.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/myCodes.iml" afterPath="$PROJECT_DIR$/.idea/myCodes.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/.idea/gradle.xml" afterPath="$PROJECT_DIR$/binRunner/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/binRunner/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/app/src/main/java/com/mss/binrunner/MainActivity.java" afterPath="$PROJECT_DIR$/binRunner/app/src/main/java/com/mss/binrunner/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/app/src/main/java/com/mss/binrunner/StartMyServiceAtBootReceiver.java" afterPath="$PROJECT_DIR$/binRunner/app/src/main/java/com/mss/binrunner/StartMyServiceAtBootReceiver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/binRunner/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/build.gradle" afterPath="$PROJECT_DIR$/binRunner/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/binRunner/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/binRunner/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datalogReceptor.txt" afterPath="$PROJECT_DIR$/datalogReceptor.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plotting/app.py" afterPath="$PROJECT_DIR$/plotting/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plotting/templates/index.html" afterPath="$PROJECT_DIR$/plotting/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plotting/templates/sensor1.html" afterPath="$PROJECT_DIR$/plotting/templates/sensor1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readingSerial.py" afterPath="$PROJECT_DIR$/readingSerial.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plotting/templates/layout.html" afterPath="$PROJECT_DIR$/plotting/templates/layout.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms1.csv" afterPath="$PROJECT_DIR$/tpms1.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms2.csv" afterPath="$PROJECT_DIR$/tpms2.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms3.csv" afterPath="$PROJECT_DIR$/tpms3.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms4.csv" afterPath="$PROJECT_DIR$/tpms4.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms5.csv" afterPath="$PROJECT_DIR$/tpms5.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpms6.csv" afterPath="$PROJECT_DIR$/tpms6.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpmsEvent.txt" afterPath="$PROJECT_DIR$/tpmsEvent.txt" />
     </list>
     <ignored path="myCodes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,7 +68,7 @@
       <file leaf-file-name="csvData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plotting/csvData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
+            <state relative-caret-position="499">
               <caret line="151" column="20" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -65,25 +77,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readingSerial.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/readingSerial.py">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plotting/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="244">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#235#246#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plotting/app.py">
+      <file leaf-file-name="report.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plotting/static/report.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="15">
+              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
               <folding>
-                <element signature="e#235#246#0" expanded="true" />
+                <element signature="n#!!doc;n#myFunc#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -92,28 +104,28 @@
       <file leaf-file-name="chart.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plotting/static/chart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+            <state relative-caret-position="124">
+              <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plotting/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="375">
+              <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpmsEvent.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpmsEvent.txt">
+      <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plotting/templates/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="220">
+              <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -124,8 +136,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -144,14 +156,20 @@
         <option value="$PROJECT_DIR$/rtplotting/app.py" />
         <option value="$PROJECT_DIR$/rtplotting/templates/index.html" />
         <option value="$PROJECT_DIR$/plotting/templates/report.html" />
-        <option value="$PROJECT_DIR$/plotting/templates/layout.html" />
         <option value="$PROJECT_DIR$/readingSerial.py" />
         <option value="$PROJECT_DIR$/plotting/templates/sensor1.html" />
         <option value="$PROJECT_DIR$/plotting/templates/chart.js" />
         <option value="$PROJECT_DIR$/plotting/static/chart.js" />
         <option value="$PROJECT_DIR$/plotting/csvData.py" />
-        <option value="$PROJECT_DIR$/plotting/templates/index.html" />
+        <option value="$PROJECT_DIR$/angular-fask/angular-flask/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/angular-fask/angular-flask/src/app/tpms/tpms.component.ts" />
+        <option value="$PROJECT_DIR$/angular-fask/angular-flask/src/app/tpms/tpms.component.html" />
+        <option value="$PROJECT_DIR$/angular-fask/angular-flask/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/angular-fask/app.py" />
+        <option value="$PROJECT_DIR$/plotting/templates/layout.html" />
+        <option value="$PROJECT_DIR$/plotting/static/report.js" />
         <option value="$PROJECT_DIR$/plotting/app.py" />
+        <option value="$PROJECT_DIR$/plotting/templates/index.html" />
       </list>
     </option>
   </component>
@@ -164,7 +182,7 @@
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -268,14 +286,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="editor.config.accepted" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/rtplotting/templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/angular-fask/templates" />
       <recent name="$PROJECT_DIR$/plotting/static" />
       <recent name="$PROJECT_DIR$/rtplotting" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/angular-fask/static" />
+      <recent name="$PROJECT_DIR$/rtplotting/templates" />
     </key>
   </component>
   <component name="RunManager">
@@ -508,24 +531,25 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25751072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -544,11 +568,103 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/plotting/csvData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2235">
+          <caret line="151" column="20" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readingSerial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#235#246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/static/chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/csvData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2235">
+          <caret line="151" column="20" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readingSerial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#235#246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/static/chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpmsEvent.txt" />
     <entry file="file://$PROJECT_DIR$/summaryTPMS.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -584,7 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -592,7 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
           <caret line="75" column="97" selection-start-line="75" selection-start-column="97" selection-end-line="75" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,7 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,13 +732,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readingSerial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="195">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -633,33 +745,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plotting/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plotting/templates/sensor1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpmsEvent.txt" />
+    <entry file="file://$PROJECT_DIR$/angular-fask/angular-flask/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plotting/static/chart.js">
+    <entry file="file://$PROJECT_DIR$/angular-fask/angular-flask/src/app/tpms/tpms.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="61" column="58" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
+        <state relative-caret-position="135">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-fask/angular-flask/src/app/tpms/tpms.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-fask/angular-flask/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular-fask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plotting/csvData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
+        <state relative-caret-position="499">
           <caret line="151" column="20" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -667,29 +803,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plotting/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/plotting/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpmsEvent.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="220">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plotting/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="244">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
             <element signature="e#235#246#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/static/report.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc;n#myFunc#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/static/chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plotting/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

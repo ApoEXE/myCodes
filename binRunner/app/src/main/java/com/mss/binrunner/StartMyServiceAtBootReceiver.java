@@ -12,6 +12,7 @@ public class StartMyServiceAtBootReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent)
     {
 
+
         Toast.makeText(context, "Broadcast received", Toast.LENGTH_LONG).show();
         Log.e(TAG, "Broacast was Created");
         Intent myIntent=new Intent(context,ServiceBinrunner.class);
