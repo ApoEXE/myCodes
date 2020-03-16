@@ -11,9 +11,7 @@ import threading
 import time
 import os
 from datetime import datetime
-from livereload import Server, shell
 from flask import Flask, Response, render_template, request, session
-from flask_caching import Cache
 import csv
 import csvData
 app = Flask(__name__)
@@ -21,7 +19,7 @@ app = Flask(__name__)
 
 #DECLARATIONS
 #path = '/home/ubuntu/'
-path = '/Users/jav/'
+path = '/home/jav/'
 device = '/dev/ttyUSB0'
 
 
@@ -47,10 +45,10 @@ _report = {
 
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
-    _report, _data, _temp = reporting()
-    return render_template('index.html',report=_report,data=_report)
+    global _report
+    return render_template('index.html',data=_report)
 
 
 @app.route('/chart-data1')
@@ -79,17 +77,12 @@ def Download_Csv():
         os.system('scp -i ' + path + 'system_key root@192.168.3.250:/sdcard/tpms* ' + path + 'myCodes/')
         time.sleep(120)
 
+        
+@app.route("/extract_data")
 def reporting():
     global _date, _temp, _report
-    print("REPORTING")
     csvData.extract_all(path)
     _report,_date,_temp =csvData.getData()
-    return _report,_date,_temp
-        #print(len(_date[0]))
-        #for x in range(6):
-         #for y in range(len(_date[x])):
-            #print('2 dimention list: ', _date[x][y], ' len(',x+1,'): ',len(_date[x]), ' temp: ',_temp[x][y])
-    #time.sleep(60)
 
 
 

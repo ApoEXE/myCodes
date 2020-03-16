@@ -1,6 +1,32 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content1 %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1p1 solid #dddddd;
+        te1t-align: left;
+        padding: 8p1;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Hola</h1>
         <table>
             <tr>
                 <th>Sensor</th>
@@ -12,81 +38,40 @@
                 <th>Total Cleaning</th>
                 <th>Total TxFailed</th>
             </tr>
-            {% for x in range(1,6)%}
-            <tr>
-                <td>{{ (x)}}</td>
-                    <td>{{report[x][1]}}</td>
-                    <td>{{report[x][2]}}</td>
-                    <td>{{report[x][3]}}</td>
-                    <td>{{report[x][4]}}</td>
-                    <td>{{report[x][5]}}</td>
-                    <td>{{report[x][7]}}</td>
-                    <td>{{report[x][9]}}</td>
-
-            </tr>
-            {% endfor %}
+            <tr id=demo></tr>
         </table>
+        <script script type="text/javascript">
+        //data = myFunc({{data|tojson}});
+        var index = 1;
+        setInterval(
+            function() {
+                document.getElementById("demo").innerHTML =
+                    "<td>   1   </td>" +
+                    "<td>" + {{data[1][1]}} + "</td>" +
+                    "<td>" + {{data[1][2]}} + "</td>" +
+                    "<td>" + {{data[1][3]}} + "</td>" +
+                    "<td>" + {{data[1][4]}} + "</td>" +
+                    "<td>" + {{data[1][5]}} + "</td>" +
+                    "<td>" + {{data[1][7]}} + "</td>" +
+                    "<td>" + {{data[1][9]}} + "</td>"+
+                    "<td>" + index + "</td>";
+                const source = new EventSource("/");
+                //source.onmessage = function(event) {}
+                index+=1;
+                console.log(index);
+            }, 2000);
+        </script>
+        <script script type="text/javascript">
+        //data = myFunc({{data|tojson}});
 
+        setInterval(
+            function() {
+                const source = new EventSource("/extract_data");
+                //source.onmessage = function(event) {}
 
-        <h1>---------------------------------------</h1>
-
-{% endblock content1 %}
-
-{% block content2 %}
-
-         <script type="text/javascript" {{ url_for('static', filename='report.js')}}></script>
-         <script type="text/javascript">
-            data = myFunc({{data|tojson}})
-         </script>
-                    <table>
-            <tr>
-                <th>Sensor</th>
-                <th>average diff time</th>
-                <th>Total Points</th>
-                <th>Biggest</th>
-                <th>Smallest</th>
-                <th>Total dead</th>
-                <th>Total Cleaning</th>
-                <th>Total TxFailed</th>
-            </tr>
-            {% for x in range(1,6)%}
-            <tr>
-                <td>{{ (x)}}</td>
-                    <td>{{data[x][1]}}</td>
-                    <td>{{data[x][2]}}</td>
-                    <td>{{data[x][3]}}</td>
-                    <td>{{data[x][4]}}</td>
-                    <td>{{data[x][5]}}</td>
-                    <td>{{data[x][7]}}</td>
-                    <td>{{data[x][9]}}</td>
-
-            </tr>
-            {% endfor %}
-        </table>
-
-{% endblock content2 %}
-
-
-{% block content3 %}
-<div>
-    <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <canvas id="canvas1"></canvas>
-                </div>
-            </div>
-        </div>
+            }, 60000);
+        </script>
     </div>
-</div>
-<!--suppress JSUnresolvedLibraryURL -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<!--suppress JSUnresolvedLibraryURL -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!--suppress JSUnresolvedLibraryURL -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-<script src="{{ url_for('static', filename='chart.js') }}">
-    var check = 1;
-</script>
-{% endblock content3 %}
+</body>
+
+</html>
