@@ -197,15 +197,12 @@ def reportSensor():
     print("Total points TxFail: ", report["totalpointsTxFail"])
 
 
-    summary[report["Sensor"]-1].append(report["difftimeSensor"])#0
+    summary[report["Sensor"]-1].append(round(report["difftimeSensor"],2))#0
     summary[report["Sensor"] - 1].append(report["totalpointsSensor"])#1
-    summary[report["Sensor"] - 1].append(report["biggestTimeSensor"])#2
-    summary[report["Sensor"] - 1].append(report["smallestTimeSensor"])#3
+    summary[report["Sensor"] - 1].append(round(report["biggestTimeSensor"],2))#2
+    summary[report["Sensor"] - 1].append(round(report["smallestTimeSensor"],2))#3
     summary[report["Sensor"] - 1].append(report["totalpointsDead"])#4
     summary[report["Sensor"] - 1].append(report["difftimeDead"])#5
     summary[report["Sensor"] - 1].append(report["totalpointsClean"])#6
     summary[report["Sensor"] - 1].append(report["difftimeClean"])#7
     summary[report["Sensor"] - 1].append(report["totalpointsTxFail"])#8
-
-
-
