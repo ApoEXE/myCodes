@@ -4,11 +4,11 @@ from datetime import datetime, timedelta
 import time
 import threading
 import csv
-ser = serial.Serial('/dev/ttyS3', timeout=None, baudrate=9600, xonxoff=False, rtscts=False, dsrdtr=False)
-ser.flushInput()
+from os import path as fileExist
+
 #		ID date time temp pres vol timeDelta
 all_IDs = [[],[],[],[],[],[],[]]
-
+dev_path = ''
 
 def timeDiff(newtime, oldtime):
     newdate = datetime.strptime(newtime, '%H:%M:%S')
@@ -103,12 +103,37 @@ def saveCSV():
     writer.writerow(["ID", str(all_IDs[0][-1]),"DATE", str(all_IDs[1][-1]),"TIME", str(all_IDs[2][-1]),"TEMPERATURE", str(all_IDs[3][-1]),"PRESSURE", str(all_IDs[4][-1]),"VOLTAGE", str(all_IDs[5][-1]),"deltaTime:", str(all_IDs[6][-1])])
 
 def serialRead():
-	while True:
-	  info = ser.readline()
-	  msg = cleanRaw(str(info));
-	  extract(msg) 
+    ser = serial.Serial(dev_path, timeout=None, baudrate=9600, xonxoff=False, rtscts=False, dsrdtr=False)
+    ser.flushInput()
+    while True:
+      info = ser.readline()
+      msg = cleanRaw(str(info));
+      extract(msg) 
+
+def setEnv():
+	global dev_path
+	arg = []
+	clean = ''
+	if fileExist.exists("env.txt"):
+		with open("env.txt", 'r') as csvfile:
+			plots = csv.reader(csvfile, delimiter='\n')
+			for row in plots:
+				arg.append(str(row))
+			arg[0]=arg[0][2:]
+			for x in arg[0]:
+				if x=="'":
+					break
+				else:
+					clean+=x
+			print(clean)
+			dev_path=clean
+		return True
+	else :
+		return False
 
 if __name__ == '__main__':
-  
-  serialReading = threading.Thread(target=serialRead)
-  serialReading.start()
+	value = setEnv()
+	print(value)
+	if(value):
+		serialReading = threading.Thread(target=serialRead)
+		serialReading.start()
