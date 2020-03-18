@@ -22,7 +22,7 @@ events = []
 timeEvents = []
 diffEvents = []
 
-summary =[[0],[0],[0],[0],[0],[0]]
+summary =[[],[],[],[],[],[],[]]
 
 report = {
     "Sensor":0,
@@ -41,16 +41,20 @@ def getData():
     return summary, datet, tempt
 
 def extract_all(_path):
-    global path
+    global summary, path, datet, tempt
+    summary =   [[],[],[],[],[],[]]
+    datet   =   [[],[],[],[],[],[]]
+    tempt   =   [[],[],[],[],[],[]]
     path= _path
-    for x in range(1,7):
+    for x in range(6):
+        #print(x+1)
         report["Sensor"]=x
         Extract_data()
         processData()
         extractEvents()
         processEvents()
         reportSensor()
-        print("-------------------------------")
+        #print("-------------------------------")
 
 def Extract_data():
     global date,time,temp,diff,points, inc, datet
@@ -60,10 +64,7 @@ def Extract_data():
     subdiff = []
     subpoints = []
     inc = 0
-    print(
-        report["Sensor"]
-    )
-    with open(path +'myCodes/tpms'+str(report["Sensor"])+'.csv', 'r') as csvfile:
+    with open(path +'myCodes/tpms'+str((report["Sensor"]+1))+'.csv', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
         for row in plots:
             string = row[0]
@@ -122,7 +123,7 @@ def processData():
 def extractEvents():
     global events
     events=[]
-    print('###########Event File summary')
+    #print('###########Event File summary')
     if fileExist.exists(path + "myCodes/tpmsEvent.txt"):
       with open(path + 'myCodes/tpmsEvent.txt', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter='\n')
@@ -185,24 +186,24 @@ def reportSensor():
     #x= report["Sensor"]-1
     #for y in range(len(datet[x])):
         #print('2 dimention list: ', datet[x][y], ' len(',x+1,'): ',len(datet[x]))
-    print("Sensor: ",report["Sensor"])
-    print("diff average S.: ", report["difftimeSensor"])
+    #print("Sensor: ",report["Sensor"])
+    #print("diff average S.: ", report["difftimeSensor"])
     print("Total points S.: ", report["totalpointsSensor"])
-    print("Biggest diff S.: ", report["biggestTimeSensor"])
-    print("Smallest diff S.: ", report["smallestTimeSensor"])
-    print("Total dead S.: ", report["totalpointsDead"])
-    print("diff average Dead S.: ", report["difftimeDead"])
-    print("Total points Clean: ", report["totalpointsClean"])
-    print("diff average Clean: ", report["difftimeClean"])
-    print("Total points TxFail: ", report["totalpointsTxFail"])
+    #print("Biggest diff S.: ", report["biggestTimeSensor"])
+    #print("Smallest diff S.: ", report["smallestTimeSensor"])
+    #print("Total dead S.: ", report["totalpointsDead"])
+    #print("diff average Dead S.: ", report["difftimeDead"])
+    #print("Total points Clean: ", report["totalpointsClean"])
+    #print("diff average Clean: ", report["difftimeClean"])
+    #print("Total points TxFail: ", report["totalpointsTxFail"])
 
-
-    summary[report["Sensor"]-1].append(round(report["difftimeSensor"],2))#0
-    summary[report["Sensor"] - 1].append(report["totalpointsSensor"])#1
-    summary[report["Sensor"] - 1].append(round(report["biggestTimeSensor"],2))#2
-    summary[report["Sensor"] - 1].append(round(report["smallestTimeSensor"],2))#3
-    summary[report["Sensor"] - 1].append(report["totalpointsDead"])#4
-    summary[report["Sensor"] - 1].append(report["difftimeDead"])#5
-    summary[report["Sensor"] - 1].append(report["totalpointsClean"])#6
-    summary[report["Sensor"] - 1].append(report["difftimeClean"])#7
-    summary[report["Sensor"] - 1].append(report["totalpointsTxFail"])#8
+    summary[report["Sensor"]].append((report["Sensor"]+1))#0
+    summary[report["Sensor"]].append(round(report["difftimeSensor"],2))#1
+    summary[report["Sensor"]].append(report["totalpointsSensor"])#2
+    summary[report["Sensor"]].append(round(report["biggestTimeSensor"],2))#3
+    summary[report["Sensor"]].append(round(report["smallestTimeSensor"],2))#4
+    summary[report["Sensor"]].append(report["totalpointsDead"])#5
+    summary[report["Sensor"]].append(report["difftimeDead"])#6
+    summary[report["Sensor"]].append(report["totalpointsClean"])#7
+    summary[report["Sensor"]].append(report["difftimeClean"])#8
+    summary[report["Sensor"]].append(report["totalpointsTxFail"])#9

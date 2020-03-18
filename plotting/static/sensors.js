@@ -1,45 +1,18 @@
-{% extends "layout.html" %}
-{% block content1 %}
-<div>
-   
-    <h1>-------------------------------</h1>
-</div>
-{% endblock content1 %}
-{% block content2 %}
-<div>
-    <h1>Hola</h1>
-    <table>
-        <tr>
-            <th>Sensor</th>
-            <th>average diff time</th>
-            <th>Total Points</th>
-            <th>Biggest</th>
-            <th>Smallest</th>
-            <th>Total dead</th>
-            <th>Total Cleaning</th>
-            <th>Total TxFailed</th>
-        </tr>
-        <tr id=sensor1></tr>
-        <tr id=sensor2></tr>
-        <tr id=sensor3></tr>
-        <tr id=sensor4></tr>
-        <tr id=sensor5></tr>
-        <tr id=sensor6></tr>
-    </table>
-
-    <script type="text/javascript" >
-        let data1 = {{data1 | safe}};
-        let data2 = {{data2 | safe}};
-        let data3 = {{data3 | safe}};
-        let data4 = {{data4 | safe}};
-        let data5 = {{data5 | safe}};
-        let data6 = {{data6 | safe}};
+let data1 = {};
 function extractCsv() {
     const source = new EventSource("/extract_data");
 }
 
 function viewData(value) {
-    let source = new EventSource("/");
+    //let source = new EventSource("/");
+    
+    console.log(data1[0]);
+    //data1 = {{data[1]}};
+    //data2 = {{data[2]}};
+    //data3 = {{data[3]}};
+    //data4 = {{data[4]}};
+    //data5 = {{data[5]}};
+    //data6 = {{data[6]}};
 
     document.getElementById("sensor1").innerHTML =
         "<td>   1   </td>" +
@@ -50,7 +23,7 @@ function viewData(value) {
         "<td>" + data1[5] + "</td>" +
         "<td>" + data1[6] + "</td>" +
         "<td>" + data1[7] + "</td>";
-    
+    /*
     document.getElementById("sensor2").innerHTML =
         "<td>   2   </td>" +
         "<td>" + data2[1] + "</td>" +
@@ -60,8 +33,8 @@ function viewData(value) {
         "<td>" + data2[5] + "</td>" +
         "<td>" + data2[6] + "</td>" +
         "<td>" + data2[7] + "</td>";
- 
-        document.getElementById("sensor3").innerHTML = 
+    
+                document.getElementById("sensor3").innerHTML = 
                     "<td>   3   </td>" +
                     "<td>" + data3[1] + "</td>" +
                     "<td>" + data3[2] + "</td>" +
@@ -69,9 +42,9 @@ function viewData(value) {
                     "<td>" + data3[4] + "</td>" +
                     "<td>" + data3[5]+ "</td>" +
                     "<td>" + data3[6] + "</td>" +
-                    "<td>" + data3[7] + "</td>";
-                  
-        document.getElementById("sensor4").innerHTML = 
+                    "<td>" + data3[7] + "</td>"+;
+                    
+                document.getElementById("sensor4").innerHTML = 
                     "<td>   4   </td>" +
                     "<td>" + data4[1] + "</td>" +
                     "<td>" + data4[2] + "</td>" +
@@ -80,7 +53,7 @@ function viewData(value) {
                     "<td>" + data4[5]+ "</td>" +
                     "<td>" + data4[6] + "</td>" +
                     "<td>" + data4[7] + "</td>";
-        document.getElementById("sensor5").innerHTML = 
+                document.getElementById("sensor5").innerHTML = 
                     "<td>   5   </td>" +
                     "<td>" + data5[1] + "</td>" +
                     "<td>" + data5[2] + "</td>" +
@@ -89,7 +62,7 @@ function viewData(value) {
                     "<td>" + data5[5]+ "</td>" +
                     "<td>" + data5[6] + "</td>" +
                     "<td>" + data5[7] + "</td>";
-         document.getElementById("sensor6").innerHTML = 
+                document.getElementById("sensor6").innerHTML = 
                     "<td>   6   </td>" +
                     "<td>" + data6[1] + "</td>" +
                     "<td>" + data6[2] + "</td>" +
@@ -98,13 +71,14 @@ function viewData(value) {
                     "<td>" + data6[5]+ "</td>" +
                     "<td>" + data6[6] + "</td>" +
                     "<td>" + data6[7] + "</td>";
-                    
+                    */
+}
+
+function setValue(value){
+    data1 = value;
+    console.log(data1);
 }
 
 setInterval(viewData, 2000);
 
 //setInterval(extractCsv, 10000);
-
-    </script>
-</div>
-{% endblock content2 %}
