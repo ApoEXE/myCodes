@@ -1,0 +1,13 @@
+[Unit]
+Description=TPMS Sensor Datalogger service
+After=network-online.target
+
+[Service]
+WorkingDirectory=/home/ubuntu/
+User=ubuntu
+ExecStart=/home/ubuntu/runOnstart.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
