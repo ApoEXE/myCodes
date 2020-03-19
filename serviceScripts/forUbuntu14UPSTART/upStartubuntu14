@@ -1,0 +1,15 @@
+Create the service file in 
+sudo cp <service name>.conf /etc/init/<service name>.conf
+sudo chmod 700 /etc/init/<service name>.conf
+sudo init-checkconf /etc/init/<service name>.conf
+initctl reload-configuration
+sudo chmod 755 TotheScriptthatRunsCode.py
+sudo service tpmsDatalogger start
+sudo ln -s /etc/init/myprogram.conf /etc/init.d/myprogram
+
+LOGS
+sudo cat /var/log/upstart/tpmsDatalogger.log
+
+
+
+ 

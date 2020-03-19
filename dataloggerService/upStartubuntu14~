@@ -1,0 +1,23 @@
+Create the service file in 
+sudo cp <service name>.conf /etc/init/<service name>.conf
+sudo chmod 700 /etc/init/<service name>.conf
+sudo init-checkconf
+initctl reload-configuration
+sudo chmod 755 TotheScriptthatRunsCode.py
+sudo service tpmsDatalogger start
+sudo ln -s /etc/init/myprogram.conf /etc/init.d/myprogram
+
+LOGS
+sudo cat /var/log/upstart/tpmsDatalogger.log
+
+
+description "Job that runs the tpmsService daemon"
+author "Javier Pernia"
+# start in normal runlevels when disks are mounted and networking is available
+start on runlevel [2345]
+
+respawn
+exec /usr/bin/python3 /home/ubuntu/dataloggerService/sensorDataloggerSerial.py
+
+
+ 
