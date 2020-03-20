@@ -151,7 +151,7 @@ def chart_data1():
 
 def Download_Csv():
     while True:
-        os.system('scp -i ' + path + 'system_key root@192.168.3.250:/sdcard/tpms* ' + path + 'myCodes/')
+        os.system('scp -i ' + path + 'myCodes/system_key root@192.168.3.250:/sdcard/tpms* ' + path + 'myCodes/')
         time.sleep(120)
 
         
@@ -221,9 +221,10 @@ def createDic(reportArray):
 
 
 if __name__ == '__main__':
+
+    x = threading.Thread(target=Download_Csv)
+    x.start()
     reporting()
-    #x = threading.Thread(target=reporting)
-    #x.start()
     app.run(debug=True, threaded=True, host='127.0.0.1', port=5000)
 
 
