@@ -64,6 +64,8 @@ def Extract_data():
     subdiff = []
     subpoints = []
     inc = 0
+    string =path +'myCodes/tpms'+str((report["Sensor"]+1))+'.csv'
+    #print("PATH:",string)
     with open(path +'myCodes/tpms'+str((report["Sensor"]+1))+'.csv', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
         for row in plots:
@@ -80,7 +82,10 @@ def Extract_data():
             subtemp.append(int(row[1]))
 
             if (inc >= 1):
-                minutes = timeDiff(subtime[-1],subtime[-2])
+                if len(subtime) >=2:
+                    minutes = timeDiff(subtime[-1],subtime[-2])
+                else:
+                    minutes = 0
                 if(minutes > 2 and minutes < 120):
                     #print(subtime[-1],' ',subtime[-2], 'minutes ', minutes )
                     subdiff.append(minutes)
@@ -145,19 +150,23 @@ def processEvents():
         aux = aux[2:7]
         if aux == 'CLEAN':
             string = str(events[x-1]).split()
-            temp = str(string[1])
-            temp=temp[:8]
-            print(len(timeEvents))
-            timeEvents.append(temp)
+            if len(string) >=2:
+                temp = str(string[1])
+                temp=temp[:8]
+                #print(len(timeEvents))
+                timeEvents.append(temp)
 
-            if y > 1:
-                print(timeEvents)
-                minutes = timeDiff(timeEvents[-1],timeEvents[-2])
-                print(minutes)
-                if (minutes > 1 and minutes < 120):
-                    diffEvents.append(minutes)
-                    prom+= minutes
-            y += 1
+                if y > 1:
+                    #print(timeEvents)
+                    if len(timeEvents) >=2:
+                        minutes = timeDiff(timeEvents[-1],timeEvents[-2])
+                    else:
+                        minutes=0
+                    #print(minutes)
+                    if (minutes > 1 and minutes < 120):
+                        diffEvents.append(minutes)
+                        prom+= minutes
+                y += 1
         if aux == 'TXFAI':
             z+=1
     promedio = 0;
@@ -188,7 +197,7 @@ def reportSensor():
         #print('2 dimention list: ', datet[x][y], ' len(',x+1,'): ',len(datet[x]))
     #print("Sensor: ",report["Sensor"])
     #print("diff average S.: ", report["difftimeSensor"])
-    print("Total points S.: ", report["totalpointsSensor"])
+
     #print("Biggest diff S.: ", report["biggestTimeSensor"])
     #print("Smallest diff S.: ", report["smallestTimeSensor"])
     #print("Total dead S.: ", report["totalpointsDead"])

@@ -14,7 +14,7 @@ import threading
 import time
 import os
 from datetime import datetime
-from flask import Flask, Response, render_template, request, session
+from flask import Flask, Response, render_template, request, session, jsonify
 import csv
 import csvData
 app = Flask(__name__)
@@ -22,7 +22,8 @@ app = Flask(__name__)
 
 #DECLARATIONS
 #path = '/home/ubuntu/'
-path = '/home/jav/'
+#path = '/home/jav/'
+path = '/mnt/c/Users/Logistica/mss/'
 device = '/dev/ttyUSB0'
 
 
@@ -31,9 +32,21 @@ downloaded = False
 _date = []
 _temp = []
 
-increment = 0
+increment = 1
 
 _report = []
+report = {
+    "Sensor":1,
+    "difftimeSensor": 0,
+    "totalpointsSensor":0,
+    "biggestTimeSensor":0,
+    "smallestTimeSensor":0,
+    "totalpointsDead":0,
+    "difftimeDead":0,
+    "difftimeClean":0,
+    "totalpointsClean":0,
+    "totalpointsTxFail":0
+}
 
 report1 = {
     "Sensor":1,
@@ -111,9 +124,9 @@ report6 = {
 @app.route('/')
 def index():
     global report1,report2,report3,report4,report5,report6
-    reporting()
-    return render_template('index.html',data1=json.dumps(report1),data2=json.dumps(report2),data3=json.dumps(report3),data4=json.dumps(report4),data5=json.dumps(report5),data6=json.dumps(report6))
-
+    #reporting()
+    #return render_template('index.html',data1=json.dumps(report1),data2=json.dumps(report2),data3=json.dumps(report3),data4=json.dumps(report4),data5=json.dumps(report5),data6=json.dumps(report6))
+    return render_template('index.html')
 
 @app.route('/chart-data1')
 def chart_data1():
@@ -142,29 +155,53 @@ def Download_Csv():
         time.sleep(120)
 
         
-@app.route("/extract_data")
+
 def reporting():
     global _date, _temp, _report
+    global report1, report2, report3, report4, report5, report6
     csvData.extract_all(path)
     _report,_date,_temp =csvData.getData()
     createDic(_report)
     print("UPDATED")
 
 
+@app.route("/extract_data", methods=['POST'])
+def extractData():
+    with app.app_context():
+        global report1, report2, report3, report4, report5, report6, increment,report
 
+        reporting()
+        if increment == 1:
+            report=report1;
+            increment+=1
+        elif increment == 2:
+            report=report2;
+            increment+=1
+        elif increment == 3:
+            report=report3;
+            increment+=1
+        elif increment == 4:
+            report=report4;
+            increment+=1
+        elif increment == 5:
+            report=report5;
+            increment+=1
+        elif increment == 6:
+            report=report6;
+            increment+=1
+        else:
+            increment=1;
 
-def serialCom():
-    ser = serial.Serial(device, timeout=None, baudrate=9600, xonxoff=False, rtscts=False, dsrdtr=False)
-    ser.flushInput()
-
-    while True:
-        f = open("datalogReceptor.txt", "a+")
-
-        info = ser.readline()
-        f.write(info.decode("utf-8"))
-        print(info.decode("utf-8"))
-    f.close()
-
+        return jsonify({'sensor': report[0],
+                    'difftimeSensor': report[1],
+                    'totalpointsSensor': report[2],
+                    'biggestTimeSensor': report[3],
+                    'smallestTimeSensor': report[4],
+                    'totalpointsDead': report[5],
+                    'difftimeDead': report[6],
+                    'difftimeClean': report[7],
+                    'totalpointsClean': report[8],
+                    'totalpointsTxFail': report[9]})
 
 
 def createDic(reportArray):
@@ -179,7 +216,7 @@ def createDic(reportArray):
         report6[x]=reportArray[5][x];
         #print("")
     #for x in range(10):
-        #print(report1[x])
+        #print("x:",x,"value:",report1[x])
     #print(reportArray[0])
 
 
