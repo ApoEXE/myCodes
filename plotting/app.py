@@ -23,7 +23,8 @@ app = Flask(__name__)
 #DECLARATIONS
 #path = '/home/ubuntu/'
 #path = '/home/jav/'
-path = '/mnt/c/Users/Logistica/mss/'
+path=''
+#path = '/mnt/c/Users/Logistica/mss/'
 device = '/dev/ttyUSB0'
 
 
@@ -128,30 +129,15 @@ def index():
     #return render_template('index.html',data1=json.dumps(report1),data2=json.dumps(report2),data3=json.dumps(report3),data4=json.dumps(report4),data5=json.dumps(report5),data6=json.dumps(report6))
     return render_template('index.html')
 
-@app.route('/chart-data1')
+@app.route('/sensor1')
 def chart_data1():
-
-    def generate_random_data():
-        global _date,_temp, increment
-        #_report, _data_temp = reporting()
-        data1 = {'report': _report}
-        #print('time: ', _date[0][x], 'value: ', _temp[0][x])
-        #json_data = json.dumps({'time': _date[0][x], 'value': _temp[0][x]})
-        #time.sleep(0.005)
-        if increment<len(_date):
-            json_data = json.dumps({'time': _date[0][increment], 'value': _temp[0][increment]})
-            increment += 1
-            #yield f"data:{json_data}\n\n"  # like a return
-            print(increment)
-
-
-
-    return Response(generate_random_data(), mimetype='text/event-stream')
+    global _date,_temp
+    return render_template('sensor1.html',title='Sensor1', max=50, labels=_date[0], values=_temp[0])
 
 
 def Download_Csv():
     while True:
-        os.system('scp -i ' + path + 'myCodes/system_key root@192.168.3.250:/sdcard/tpms* ' + path + 'myCodes/')
+        os.system('scp -i ' + path + 'system_key root@192.168.3.250:/sdcard/tpms* ' + path + 'data/')
         time.sleep(120)
 
         
@@ -222,8 +208,8 @@ def createDic(reportArray):
 
 if __name__ == '__main__':
 
-    x = threading.Thread(target=Download_Csv)
-    x.start()
+    #x = threading.Thread(target=Download_Csv)
+    #x.start()
     reporting()
     app.run(debug=True, threaded=True, host='127.0.0.1', port=5000)
 

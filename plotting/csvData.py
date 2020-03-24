@@ -64,9 +64,9 @@ def Extract_data():
     subdiff = []
     subpoints = []
     inc = 0
-    string =path +'myCodes/tpms'+str((report["Sensor"]+1))+'.csv'
+    #string =path +'data/tpms'+str((report["Sensor"]+1))+'.csv'
     #print("PATH:",string)
-    with open(path +'myCodes/tpms'+str((report["Sensor"]+1))+'.csv', 'r') as csvfile:
+    with open(path +'data/tpms'+str((report["Sensor"]+1))+'.csv', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
         for row in plots:
             string = row[0]
@@ -129,8 +129,8 @@ def extractEvents():
     global events
     events=[]
     #print('###########Event File summary')
-    if fileExist.exists(path + "myCodes/tpmsEvent.txt"):
-      with open(path + 'myCodes/tpmsEvent.txt', 'r') as csvfile:
+    if fileExist.exists(path + "data/tpmsEvent.txt"):
+      with open(path + 'data/tpmsEvent.txt', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter='\n')
         for row in plots:
             if(len(row)>0):

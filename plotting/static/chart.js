@@ -1,4 +1,4 @@
-var revisar=0;
+
 $(document).ready(function () {
         const config = {
             type: 'line',
