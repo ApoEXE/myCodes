@@ -14,6 +14,9 @@ $(document).ready(function () {
             },
             options: {
                 responsive: true,
+                animation: {
+                    duration: 0 // general animation time
+                },
                 title: {
                     display: true,
                     text: 'TPMS'
@@ -49,20 +52,31 @@ $(document).ready(function () {
 
         const lineChart = new Chart(context, config);
 
-        const source = new EventSource("/chart-data1");
+        const source = new EventSource("/_sensor1");
 
         source.onmessage = function (event) {
             const data = JSON.parse(event.data);
-
-            if (config.data.labels.length === 20000) {
+            if(data.reset==1){
+                config.data.labels=[];
+                config.data.datasets[0].data=[];
+            }
+            if (config.data.labels.length === 200) {
                 config.data.labels.shift();
                 config.data.datasets[0].data.shift();
             }
-            config.data.labels.push(data.time);
-            config.data.datasets[0].data.push(data.value);
-            //document.write(" dato at index last   "+config.data.labels[config.data.labels.length-1]);
-            //document.write(" dato at index 0   "+config.data.labels[0]+"    ");
-            lineChart.update();
+        
+            /*
+            for (let index = 0; index < data.date.length; index++) {
+                config.data.labels.push(data.date[index]);
+                config.data.datasets[0].data.push(data.temp[index]);
+                lineChart.update();
+                
+            }
+            */
+           config.data.labels.push(data.date);
+           config.data.datasets[0].data.push(data.temp);
+           lineChart.update();
         }
+        
 
     });

@@ -71,8 +71,8 @@ def Extract_data():
         for row in plots:
             string = row[0]
 
-            datet[report["Sensor"]-1].append(row[0]);
-            tempt[report["Sensor"]-1].append(row[1]);
+            datet[report["Sensor"]].append(row[0]);
+            tempt[report["Sensor"]].append(row[1]);
 
             txt = string.split()
 
