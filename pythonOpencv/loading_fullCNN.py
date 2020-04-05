@@ -93,7 +93,7 @@ class Net(nn.Module):
         self.fc2 = nn.Linear(512, 2) # 512 in, 2 out bc we're doing 2 classes (dog vs cat).
  
 def test(test_X,test_y):
-    
+
     #VALIDATING DATA
     print("TESTING ACCURACY OF net")
     correct = 0
@@ -132,7 +132,7 @@ def convertData(training_data):
 training_data = np.load("training_data.npy", allow_pickle=True)
 print("DATASET SIZE",len(training_data))
 #STEP2: CREATE OUR NEURAL NETWORK  IN A MODULE "CLASS"      
-#STEP3: LOAD OUR NEURAL NETWORK
+#STEP3: LOAD OUR Model NEURAL NETWORK
 net = Net()
 net.load_state_dict(torch.load("fullcnn.pt"))
 net.eval()

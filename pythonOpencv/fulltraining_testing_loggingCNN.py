@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 from tqdm import tqdm
 import matplotlib.pyplot as plt
+import time
 #NEURAL LAYERS CREATION
 import torch
 import torch.nn as nn
@@ -91,44 +92,47 @@ class Net(nn.Module):
         self.fc1 = nn.Linear(self._to_linear, 512) #flattening.
         #LAYER LINEAR 2
         self.fc2 = nn.Linear(512, 2) # 512 in, 2 out bc we're doing 2 classes (dog vs cat).
+
+
+def fwd_pass(X,y,train=False):
+    acc = 0
+    loss = 0
+    if train:
+        net.zero_grad()
+    outputs = net(X)
+    matches = [torch.argmax(i)==torch.argmax(j) for i, j in zip(outputs,y)]
+    acc = matches.count(True)/len(matches)
+    loss = loss_function(outputs, y)
         
-def train(train_X,train_y):
-    #TRAINNING
+    if train:
+        loss.backward()
+        optimizer.step()
+    return acc, loss
+#TRAINING IS DOING TESTING TOO
+def train(test_X,test_y,train_X, train_y):
     BATCH_SIZE = 100
-    EPOCHS = 1
-    print("TRAINING MODEL WITH BATCH:",BATCH_SIZE, "AND EPOCHS:",EPOCHS)
-    for epoch in range(EPOCHS):# from 0, to the len of x, stepping BATCH_SIZE at a time. [:50] ..for now just to dev
-        for i in tqdm(range(0, len(train_X), BATCH_SIZE)): 
-            #print(f"{i}:{i+BATCH_SIZE}")
-            batch_X = train_X[i:i+BATCH_SIZE].view(-1, 1, 50, 50)
-            batch_y = train_y[i:i+BATCH_SIZE]  
-            net.zero_grad()
-            outputs = net(batch_X)
-            loss = loss_function(outputs, batch_y)
-            loss.backward()
-            optimizer.step()    # Does the update
-
-
-
-    print(f"Epoch: {epoch+1}. Loss: {loss}")
+    EPOCHS = 8
+    with open("model.log", "a") as f:
+        for epoch in range(EPOCHS):
+            for i in tqdm(range(0, len(train_X),BATCH_SIZE)):
+                batch_X = train_X[i:i+BATCH_SIZE].view(-1,1,50,50)
+                batch_y = train_y[i:i+BATCH_SIZE]
+                
+                acc , loss = fwd_pass(batch_X, batch_y, train=True)
+                if i % 50 == 0:
+                    val_acc , val_loss = test(test_X,test_y,size=100)
+                    f.write(f"{MODEL_NAME},{round(time.time(),3)},{round(float(acc),2)},{round(float(loss),2)},{round(float(val_acc),2)},{round(float(val_loss),4)}\n")
+    #this happends when training is finished
+    print(f"Training Ended: Epoch: {epoch+1}. Loss: {loss}")
     #SAVE MODEL
     torch.save(net.state_dict(), "fullcnn.pt")
 
-def test(test_X,test_y):
-    #VALIDATING DATA
-    print("TESTING ACCURACY OF MODEL")
-    correct = 0
-    total = 0
+def test(test_X, test_y,size=32):
+    random_start = np.random.randint(len(test_X)-size)
+    X, y = test_X[random_start:random_start+size], test_y[random_start:random_start+size]
     with torch.no_grad():
-        for i in tqdm(range(len(test_X))):
-            real_class = torch.argmax(test_y[i])
-            net_out = net(test_X[i].view(-1, 1, 50, 50))[0]  # returns a list, 
-            predicted_class = torch.argmax(net_out)
-
-            if predicted_class == real_class:
-                correct += 1
-            total += 1
-    print("Accuracy: ", round(correct/total, 3))
+        val_acc,val_loss = fwd_pass(X.view(-1,1,50,50),y)
+    return val_acc, val_loss
 
 def convertData(training_data):
     X = torch.Tensor([i[0] for i in training_data]).view(-1,50,50)
@@ -157,7 +161,8 @@ training_data = np.load("training_data.npy", allow_pickle=True)
 print("DATASET SIZE",len(training_data))
 
 #STEP2: CREATE OUR NEURAL NETWORK  IN A MODULE "CLASS"      
-#STEP3: LOAD OUR NEURAL NETWORK
+#STEP3: LOAD OUR CREATED NEURAL NETWORK
+MODEL_NAME = f"model-{int(time.time())}"
 net = Net()
 print(net)
 #STEP4: PREPARE NN PARAMETERS AND LOSS FOR TRAINNING
@@ -166,6 +171,5 @@ loss_function = nn.MSELoss()
 #STEP5: PREPARE DATASET: TRAINING TESTING
 test_y,test_X,train_y,train_X = convertData(training_data)
 #STEP6: TRAIN WITH TRAINNING DATASET
-train(train_X,train_y)
-#STEP7: TEST WITH TESTING DATASET
-test(test_X,test_y)
+train(test_X,test_y,train_X,train_y)
+
