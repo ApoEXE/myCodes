@@ -32,7 +32,7 @@ def cleanRaw(raw_msg):
   		msg+=raw_msg[x]
   	else :
   	  	break; 
-  return msg;
+  return msg
 
 def voltage(code):
 	vConst = 0.01
@@ -55,7 +55,7 @@ def pressure(Mcode, Lcode):
 def extract(msg):
 	global all_IDs
 	if(msg[0]=='$' and len(msg) > 5):
-	  	tmp = msg[13:];
+	  	tmp = msg[13:]
 	  	ID = tmp[0:2]+tmp[3:5]+tmp[6:8]+tmp[9:11]
 	  	#print(ID)
 	  	TCODE = "0x"+tmp[14:16]
@@ -70,7 +70,7 @@ def extract(msg):
 	  		pmHex = 0x00
 	  	plHex= int(PL,16)
 	  	if(plHex==0x00):
-	  	    plHex = 0x01;
+	  	    plHex = 0x01
 	  	volt = round(voltage(vHex),2)
 	  	temp = round(temperature(tHex),2)
 	  	pres = round(pressure(pmHex,plHex),2)
@@ -129,7 +129,7 @@ def lookup_lastIndex(ID):
 
 def saveCSV():
   global all_IDs
-  with open('/home/ubuntu/dataloggerService/'+all_IDs[0][-1]+'.csv', 'a', newline='') as file:
+  with open(all_IDs[0][-1]+'.csv', 'a', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(["ID", str(all_IDs[0][-1]),"DATE", str(all_IDs[1][-1]),"TIME", str(all_IDs[2][-1]),"TEMPERATURE", str(all_IDs[3][-1]),"PRESSURE", str(all_IDs[4][-1]),"VOLTAGE", str(all_IDs[5][-1]),"deltaTime:", str(all_IDs[6][-1]),"STATUS", str(all_IDs[7][-1])])
 
@@ -138,7 +138,7 @@ def serialRead():
     ser.flushInput()
     while True:
       info = ser.readline()
-      msg = cleanRaw(str(info));
+      msg = cleanRaw(str(info))
       extract(msg)
       time.sleep(0.5) 
 
@@ -146,8 +146,8 @@ def setEnv():
 	global dev_path
 	arg = []
 	clean = ''
-	if fileExist.exists("/home/ubuntu/dataloggerService/env.txt"):
-		with open("/home/ubuntu/dataloggerService/env.txt", 'r') as csvfile:
+	if fileExist.exists("env.txt"):
+		with open("env.txt", 'r') as csvfile:
 			plots = csv.reader(csvfile, delimiter='\n')
 			for row in plots:
 				arg.append(str(row))

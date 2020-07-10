@@ -13,8 +13,8 @@ from drawnow import drawnow
 import os.path
 from os import path as fileExist
 plt.ion()  # tell matplotlib you want interactive mode to plot data
-
-path = '/Users/jav/'
+screen = ""
+path = '/home/wsl/'
 file = ''
 date = []
 time = []
@@ -73,7 +73,10 @@ def makeFig():
 
 
 def Download_Csv():
-    os.system('scp -i ' + path + 'system_key root@192.168.3.250:/sdcard/tpms* ' + path + 'myCodes/')
+    global screen
+    path_screen = 'scp -i system_key root@'+screen+':/sdcard/tpms* Downloads/'
+    print(path_screen)
+    os.system(path_screen)
 
 def Extract_data():
     global date,time,temp,diff,points, inc
@@ -111,7 +114,7 @@ def processData():
     global points, diff
     prom=0
     for x in range(len(diff)):
-        prom+=diff[x];
+        prom+=diff[x]
     prom=prom/len(diff)
     cntDead = 0
     timebf=0
@@ -163,7 +166,7 @@ def processEvents():
             y += 1
         if aux == 'TXFAI':
             z+=1
-    promedio = 0;
+    promedio = 0
     if (y-2) > 0:
         promedio = (prom/(y-2))
     timeEvents = timeEvents[2:]
@@ -198,11 +201,12 @@ def reportSensor():
 
 
 
-
+screen = ""
 def main():
-    global inc,file
+    global inc,file, screen
     file = sys.argv[1]
-    print("######Reading: ",file)
+    screen = sys.argv[2]
+    print("######Reading: {} ip {}".format(file,screen))
     if len(sys.argv) > 1 :
         inc = 0
         Download_Csv()

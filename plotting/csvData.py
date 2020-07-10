@@ -47,14 +47,14 @@ def extract_all(_path):
     tempt   =   [[],[],[],[],[],[]]
     path= _path
     for x in range(6):
-        #print(x+1)
+        print(x+1)
         report["Sensor"]=x
         Extract_data()
         processData()
         extractEvents()
         processEvents()
         reportSensor()
-        #print("-------------------------------")
+        print("-------------------------------")
 
 def Extract_data():
     global date,time,temp,diff,points, inc, datet
@@ -66,13 +66,13 @@ def Extract_data():
     inc = 0
     #string =path +'data/tpms'+str((report["Sensor"]+1))+'.csv'
     #print("PATH:",string)
-    with open(path +'data/tpms'+str((report["Sensor"]+1))+'.csv', 'r') as csvfile:
+    with open(path +'tpms'+str((report["Sensor"]+1))+'.csv', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
         for row in plots:
             string = row[0]
 
-            datet[report["Sensor"]].append(row[0]);
-            tempt[report["Sensor"]].append(row[1]);
+            datet[report["Sensor"]].append(row[0])
+            tempt[report["Sensor"]].append(row[1])
 
             txt = string.split()
 
@@ -104,7 +104,7 @@ def processData():
     global points, diff
     prom=0
     for x in range(len(diff)):
-        prom+=diff[x];
+        prom+=diff[x]
     if(len(diff)>0):
      prom=prom/len(diff)
     cntDead = 0
@@ -116,8 +116,12 @@ def processData():
 
     report["difftimeSensor"]=prom
     report["totalpointsSensor"]=len(date)
-    report["biggestTimeSensor"]=max(diff)
-    report["smallestTimeSensor"]=min(diff)
+    if(len(diff) > 2):
+        report["biggestTimeSensor"]=max(diff)
+        report["smallestTimeSensor"]=min(diff)
+    else:
+        report["biggestTimeSensor"]=0
+        report["smallestTimeSensor"]=0
     report["totalpointsDead"]=cntDead
     if cntDead > 0:
         report["difftimeDead"] = (timebf/cntDead)
@@ -129,8 +133,8 @@ def extractEvents():
     global events
     events=[]
     #print('###########Event File summary')
-    if fileExist.exists(path + "data/tpmsEvent.txt"):
-      with open(path + 'data/tpmsEvent.txt', 'r') as csvfile:
+    if fileExist.exists(path + "tpmsEvent.txt"):
+      with open(path + 'tpmsEvent.txt', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter='\n')
         for row in plots:
             if(len(row)>0):
@@ -169,7 +173,7 @@ def processEvents():
                 y += 1
         if aux == 'TXFAI':
             z+=1
-    promedio = 0;
+    promedio = 0
     if (y-2) > 0:
         promedio = (prom/(y-2))
     timeEvents = timeEvents[2:]

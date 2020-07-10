@@ -16,16 +16,17 @@ from datetime import datetime
 from flask import Flask, Response, render_template, request, session, jsonify
 import csv
 import csvData
+import sys
 app = Flask(__name__)
 
 
 # DECLARATIONS
 #path = '/home/ubuntu/'
 #path = '/home/jav/'
-path = ''
+path = '/home/wsl/Downloads/'
 #path = '/mnt/c/Users/Logistica/mss/'
 device = '/dev/ttyUSB0'
-
+screen ="192.168.2.10"
 
 downloaded = False
 
@@ -171,6 +172,7 @@ def sensorLive():
 
 def reporting():
     global _date, _temp, _report
+    Download_Csv()
     csvData.extract_all(path)
     _date = []
     _temp = []
@@ -217,7 +219,11 @@ def extractData():
                         'difftimeClean': report[7],
                         'totalpointsClean': report[8],
                         'totalpointsTxFail': report[9]})
-
+def Download_Csv():
+    global screen
+    path_screen = 'scp -i ~/system_key root@'+screen+':/sdcard/tpms* ~/Downloads/'
+    print(path_screen)
+    os.system(path_screen)
 
 def createDic(reportArray):
     global report1, report2, report3, report4, report5, report6
@@ -236,9 +242,16 @@ def createDic(reportArray):
 
 
 if __name__ == '__main__':
+    
+    if len(sys.argv) > 1:
+        screen = sys.argv[1]
+        #x = threading.Thread(target=Download_Csv)
+        #x.start()
 
-    #x = threading.Thread(target=Download_Csv)
-    # x.start()
-    reporting()
-    app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
+        if(os.path.exists("/home/wsl/Downloads/tpms1.csv")):
+            print("it exist")
+            reporting()
+            app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
+    else:
+        print("first argument IP of screen")
 
