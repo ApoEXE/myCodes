@@ -1,0 +1,13 @@
+debes crear la carpeta /home/<user>/arhud
+y alli poner todos los archivos del programa: binario, base de datos, archivos del yolo
+1. cp arhud.service  ~/.config/systemd/user/
+2. systemctl --user daemon-reload
+3. systemctl --user enable arhud.service
+4. systemctl --user start arhud.service
+5. systemctl --user status arhud.service
+6. journalctl --user-unit arhud.service
+para detener
+systemctl --user stop arhud.service
+
+para que no se inicie al bootear
+systemctl --user disable arhud.service

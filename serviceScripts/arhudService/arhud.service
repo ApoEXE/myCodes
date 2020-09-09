@@ -1,0 +1,13 @@
+[Unit]
+Description=arhud
+After=network-online.target
+
+[Service]
+WorkingDirectory=/home/tx2/
+User=ubuntu
+ExecStart=/home/tx2/mss/vn_arhud/runOnstart.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
