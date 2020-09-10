@@ -10,6 +10,7 @@ from os import path as fileExist
 all_IDs = [[],[],[],[],[],[],[],[]]
 dev_path = ''
 
+
 def timeDiff(newtime, oldtime):
     newdate = datetime.strptime(newtime, '%H:%M:%S')
     olddate = datetime.strptime(oldtime, '%H:%M:%S')
@@ -52,62 +53,76 @@ def pressure(Mcode, Lcode):
 	value = value*psiConst
 	return value
 
+def crcCheck(data):
+	crc = 0
+	for i in data:
+		crc ^= int(i)
+	#print(hex(crc))
+	return crc
+
 def extract(msg):
 	global all_IDs
 	if(msg[0]=='$' and len(msg) > 5):
 	  	tmp = msg[13:]
 	  	ID = tmp[0:2]+tmp[3:5]+tmp[6:8]+tmp[9:11]
-	  	#print(ID)
+	  	#print(tmp)
 	  	TCODE = "0x"+tmp[14:16]
 	  	VCODE = "0x"+tmp[17:19]
 	  	PM	= 	"0x"+tmp[20:22]
 	  	PL	=	"0x"+tmp[23:25]
 	  	SW  = tmp[33:35]
-	  	tHex = int(TCODE,16)
-	  	vHex = int(VCODE,16)
-	  	pmHex = int(PM,16)
-	  	if(pmHex==0xff):
-	  		pmHex = 0x00
-	  	plHex= int(PL,16)
-	  	if(plHex==0x00):
-	  	    plHex = 0x01
-	  	volt = round(voltage(vHex),2)
-	  	temp = round(temperature(tHex),2)
-	  	pres = round(pressure(pmHex,plHex),2)
+	  	checksum = "0x"+tmp[28:30]
+	  	#print(checksum)
+	  	#print("-----")
+	  	data=[int(tmp[0:2],16),int(tmp[3:5],16),int(tmp[6:8],16),int(tmp[9:11],16),int(tmp[14:16],16),int(tmp[17:19],16),int(tmp[20:22],16),int(tmp[23:25],16)]
+	  	
+	  	crc=crcCheck(data)
+	  	if(crc == int(tmp[28:30],16)):
+		  	tHex = int(TCODE,16)
+		  	vHex = int(VCODE,16)
+		  	pmHex = int(PM,16)
+		  	if(pmHex==0xff):
+			  	pmHex = 0x00
+		  	plHex= int(PL,16)
+		  	if(plHex==0x00):
+			  	plHex = 0x01
+		  	volt = round(voltage(vHex),2)
+		  	temp = round(temperature(tHex),2)
+		  	pres = round(pressure(pmHex,plHex),2)
 
-	  	size,index = lookup_lastIndex(ID)
-	  	now = datetime.now()
-	  	now=now.strftime("%y-%m-%d %H:%M:%S")
-	  	date,time = str(now).split()
+		  	size,index = lookup_lastIndex(ID)
+		  	now = datetime.now()
+		  	now=now.strftime("%y-%m-%d %H:%M:%S")
+		  	date,time = str(now).split()
 
-	  	all_IDs[0].append(ID)
-	  	all_IDs[1].append(date)
-	  	all_IDs[2].append(time)
-	  	all_IDs[3].append(temp)
-	  	all_IDs[4].append(pres)
-	  	all_IDs[5].append(volt)
-	  	STATUS =''
-	  	if SW == '01' or SW == '00':
-	  		STATUS='ON'
-	  		all_IDs[7].append('ON')
-	  	else:
-	  		STATUS='OFF'
-	  		all_IDs[7].append('OFF')
-	  	#print(len(all_IDs[0]))
-	  	minutes=0.
+		  	all_IDs[0].append(ID)
+		  	all_IDs[1].append(date)
+		  	all_IDs[2].append(time)
+		  	all_IDs[3].append(temp)
+		  	all_IDs[4].append(pres)
+		  	all_IDs[5].append(volt)
+		  	STATUS =''
+		  	if SW == '01' or SW == '00':
+			  	STATUS='ON'
+			  	all_IDs[7].append('ON')
+		  	else:
+			  	STATUS='OFF'
+			  	all_IDs[7].append('OFF')
+			#print(len(all_IDs[0]))
+		  	minutes=0.
 
-	  	if size < 1:
-	  		all_IDs[6].append(minutes)
-	  		saveCSV()
-	  		print(date,"",time,"ID: ", ID, "T: ", temp, "V: ", volt, "P: ", pres, "DELTA: ", minutes, "STATUS:",STATUS)
-	  	elif size >=2:
-	  		#print("ID:",ID,"Index:",index,"size:",size)
-	  		minutes=timeDiff(time,all_IDs[2][index])
-	  		minutes=round(minutes,2)
-	  		if(minutes>=1):	
-	  			all_IDs[6].append(minutes)
-	  			saveCSV()
-	  			print(date,"",time,"ID:", ID, "T:", temp, "V:", volt, "P:", pres, "DELTA:", minutes, "STATUS:",STATUS)
+		  	if size < 1:
+		  	  	all_IDs[6].append(minutes)
+		  	  	saveCSV()
+		  	  	print(date,"",time,"ID: ", ID, "T: ", temp, "V: ", volt, "P: ", pres, "DELTA: ", minutes, "STATUS:",STATUS)
+		  	elif size >=2:
+			  	#print("ID:",ID,"Index:",index,"size:",size)
+			  	minutes=timeDiff(time,all_IDs[2][index])
+			  	minutes=round(minutes,2)
+			  	if(minutes>=1):
+			  	  	all_IDs[6].append(minutes)
+			  	  	saveCSV()
+			  	  	print(date,"",time,"ID:", ID, "T:", temp, "V:", volt, "P:", pres, "DELTA:", minutes, "STATUS:",STATUS)
 
 
 def lookup_lastIndex(ID):
