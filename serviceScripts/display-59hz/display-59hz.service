@@ -4,6 +4,7 @@ After=graphical-session.target
 
 [Service]
 WorkingDirectory=%h/arhud
+ExecStartPre=%h/display.sh
 ExecStartPre=/bin/sleep 2
 ExecStart=%h/arhud/arhud
 Type=simple

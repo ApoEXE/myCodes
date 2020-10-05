@@ -21,12 +21,10 @@ app = Flask(__name__)
 
 
 # DECLARATIONS
-#path = '/home/ubuntu/'
-#path = '/home/jav/'
-path = '/home/wsl/Downloads/'
-#path = '/mnt/c/Users/Logistica/mss/'
-device = '/dev/ttyUSB0'
-screen ="192.168.2.10"
+
+path = '/home/ubuntu/jav/Desktop/TAS-Downloaded-cvs/kit_jav/'
+
+screen ="192.168.3.250"
 
 downloaded = False
 
@@ -164,7 +162,7 @@ def sensorLive():
             elif abs(size-lastSize)>1:
                 cnt=0
                 reset=1
-            time.sleep(0.005)
+            time.sleep(0.0005)
 
     return Response(generate_random_data(), mimetype='text/event-stream')
 
@@ -172,7 +170,6 @@ def sensorLive():
 
 def reporting():
     global _date, _temp, _report
-    Download_Csv()
     csvData.extract_all(path)
     _date = []
     _temp = []
@@ -235,10 +232,10 @@ def createDic(reportArray):
         report4[x] = reportArray[3][x]
         report5[x] = reportArray[4][x]
         report6[x] = reportArray[5][x]
-        # print("")
-    # for x in range(10):
-        # print("x:",x,"value:",report1[x])
-    # print(reportArray[0])
+        #print("")
+    #for x in range(10):
+        #print("x:",x,"value:",report1[x])
+    #print(reportArray[0])
 
 
 if __name__ == '__main__':
@@ -248,7 +245,7 @@ if __name__ == '__main__':
         #x = threading.Thread(target=Download_Csv)
         #x.start()
 
-        if(os.path.exists("/home/wsl/Downloads/tpms1.csv")):
+        if(os.path.exists(r"/home/ubuntu/jav/Desktop/TAS-Downloaded-cvs/kit_jav/tpms1.csv")):
             print("it exist")
             reporting()
             app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)

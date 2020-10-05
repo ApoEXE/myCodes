@@ -47,14 +47,14 @@ def extract_all(_path):
     tempt   =   [[],[],[],[],[],[]]
     path= _path
     for x in range(6):
-        print(x+1)
+        #print(x+1)
         report["Sensor"]=x
         Extract_data()
         processData()
         extractEvents()
         processEvents()
         reportSensor()
-        print("-------------------------------")
+        #print("-------------------------------")
 
 def Extract_data():
     global date,time,temp,diff,points, inc, datet
@@ -196,20 +196,21 @@ def timeDiff(newtime, oldtime):
 
 def reportSensor():
     global summary, report
-    #x= report["Sensor"]-1
-    #for y in range(len(datet[x])):
-        #print('2 dimention list: ', datet[x][y], ' len(',x+1,'): ',len(datet[x]))
-    #print("Sensor: ",report["Sensor"])
-    #print("diff average S.: ", report["difftimeSensor"])
+    '''
+    x= report["Sensor"]-1
+    for y in range(len(datet[x])):
+        print('2 dimention list: ', datet[x][y], ' len(',x+1,'): ',len(datet[x]))
+    print("Sensor: ",report["Sensor"])
+    print("diff average S.: ", report["difftimeSensor"])
 
-    #print("Biggest diff S.: ", report["biggestTimeSensor"])
-    #print("Smallest diff S.: ", report["smallestTimeSensor"])
-    #print("Total dead S.: ", report["totalpointsDead"])
-    #print("diff average Dead S.: ", report["difftimeDead"])
-    #print("Total points Clean: ", report["totalpointsClean"])
-    #print("diff average Clean: ", report["difftimeClean"])
-    #print("Total points TxFail: ", report["totalpointsTxFail"])
-
+    print("Biggest diff S.: ", report["biggestTimeSensor"])
+    print("Smallest diff S.: ", report["smallestTimeSensor"])
+    print("Total dead S.: ", report["totalpointsDead"])
+    print("diff average Dead S.: ", report["difftimeDead"])
+    print("Total points Clean: ", report["totalpointsClean"])
+    print("diff average Clean: ", report["difftimeClean"])
+    print("Total points TxFail: ", report["totalpointsTxFail"])
+'''
     summary[report["Sensor"]].append((report["Sensor"]+1))#0
     summary[report["Sensor"]].append(round(report["difftimeSensor"],2))#1
     summary[report["Sensor"]].append(report["totalpointsSensor"])#2

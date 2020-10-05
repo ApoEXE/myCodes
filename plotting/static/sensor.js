@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-    setInterval(viewChart, 1000);
+    setInterval(viewChart, 50);
 
 
 
