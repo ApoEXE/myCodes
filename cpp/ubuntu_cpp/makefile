@@ -1,5 +1,5 @@
-all:tuto13.cpp Shader.cpp
-	g++ -g tuto13.cpp  Shader.cpp camera.cpp -I./include -L./lib --std=c++11 -lglad -lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl -o test
+all:tuto13.cpp shader.cpp camera.cpp
+	g++ -g tuto13.cpp  shader.cpp camera.cpp -I./include -L./lib --std=c++11 -lglad -lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl -o test
 #g++ main.cpp -o firstOpenGlApp -lglut -lGLU -lGL
 #g++ gltuto_1.cpp  -lGL -lglfw3 -pthread -lX11 -ldl -lGLEW
 #$(CXX) $(CXX_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $@ (LIBRARIES)

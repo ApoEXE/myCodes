@@ -12,10 +12,8 @@ class Shader
 {
 public:
     // the program ID
-    Shader();
+    Shader(std::string filepath);
     unsigned int ID;
-
-    void setup_shader(std::string filepath);
     void use();
     // utility uniform functions
     void setBool(const std::string &name, bool value) const;

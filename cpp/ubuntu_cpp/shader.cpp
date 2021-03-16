@@ -1,11 +1,10 @@
 #include "shader.h"
-Shader::Shader() {}
-
-void Shader::setup_shader(std::string filepath)
-{
+Shader::Shader(std::string filepath) {
     ShaderProgramSource source = ParseShaders(filepath);
     ID = CreateShader(source.VertexSource, source.FragmentSource);
 }
+
+
 Shader::ShaderProgramSource Shader::ParseShaders(const std::string &filepath)
 {
     std::ifstream stream(filepath);
