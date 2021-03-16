@@ -1,0 +1,13 @@
+debes crear la carpeta /home/<user>/arhud
+y alli poner todos los archivos del programa: binario, base de datos, archivos del yolo
+1. cp webcam.service  ~/.config/systemd/user/
+2. systemctl --user daemon-reload
+3. systemctl --user enable webcam.service
+4. systemctl --user start webcam.service
+5. systemctl --user status webcam.service
+6. journalctl --user-unit webcam.service
+para detener
+systemctl --user stop webcam.service
+
+para que no se inicie al bootear
+systemctl --user disable webcam.service

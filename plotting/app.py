@@ -16,16 +16,15 @@ from datetime import datetime
 from flask import Flask, Response, render_template, request, session, jsonify
 import csv
 import csvData
+import sys
 app = Flask(__name__)
 
 
 # DECLARATIONS
-#path = '/home/ubuntu/'
-#path = '/home/jav/'
-path = ''
-#path = '/mnt/c/Users/Logistica/mss/'
-device = '/dev/ttyUSB0'
 
+path = '/home/ubuntu/jav/Desktop/TAS-Downloaded-cvs/kit_jav/'
+
+screen ="192.168.3.250"
 
 downloaded = False
 
@@ -163,7 +162,7 @@ def sensorLive():
             elif abs(size-lastSize)>1:
                 cnt=0
                 reset=1
-            time.sleep(0.005)
+            time.sleep(0.0005)
 
     return Response(generate_random_data(), mimetype='text/event-stream')
 
@@ -217,7 +216,11 @@ def extractData():
                         'difftimeClean': report[7],
                         'totalpointsClean': report[8],
                         'totalpointsTxFail': report[9]})
-
+def Download_Csv():
+    global screen
+    path_screen = 'scp -i ~/system_key root@'+screen+':/sdcard/tpms* ~/Downloads/'
+    print(path_screen)
+    os.system(path_screen)
 
 def createDic(reportArray):
     global report1, report2, report3, report4, report5, report6
@@ -229,16 +232,23 @@ def createDic(reportArray):
         report4[x] = reportArray[3][x]
         report5[x] = reportArray[4][x]
         report6[x] = reportArray[5][x]
-        # print("")
-    # for x in range(10):
-        # print("x:",x,"value:",report1[x])
-    # print(reportArray[0])
+        #print("")
+    #for x in range(10):
+        #print("x:",x,"value:",report1[x])
+    #print(reportArray[0])
 
 
 if __name__ == '__main__':
+    
+    if len(sys.argv) > 1:
+        screen = sys.argv[1]
+        #x = threading.Thread(target=Download_Csv)
+        #x.start()
 
-    #x = threading.Thread(target=Download_Csv)
-    # x.start()
-    reporting()
-    app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
+        if(os.path.exists(r"/home/ubuntu/jav/Desktop/TAS-Downloaded-cvs/kit_jav/tpms1.csv")):
+            print("it exist")
+            reporting()
+            app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
+    else:
+        print("first argument IP of screen")
 

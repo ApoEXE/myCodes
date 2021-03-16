@@ -60,7 +60,7 @@ $(document).ready(function () {
                 config.data.labels=[];
                 config.data.datasets[0].data=[];
             }
-            if (config.data.labels.length === 200) {
+            if (config.data.labels.length === 2000) {
                 config.data.labels.shift();
                 config.data.datasets[0].data.shift();
             }

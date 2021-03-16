@@ -33,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Log.v("RUNNING","starting cmdtpms");
-                        executeCommand("cmdtpms -i");
+
+                        //executeCommand("cmdtpms -i");
+                        executeCommand("while true;do echo sendCan;cansend can0 18DE9600#3402;sleep 0.01;done");
                     }
                 });
             }

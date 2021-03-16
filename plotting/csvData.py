@@ -66,13 +66,13 @@ def Extract_data():
     inc = 0
     #string =path +'data/tpms'+str((report["Sensor"]+1))+'.csv'
     #print("PATH:",string)
-    with open(path +'data/tpms'+str((report["Sensor"]+1))+'.csv', 'r') as csvfile:
+    with open(path +'tpms'+str((report["Sensor"]+1))+'.csv', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
         for row in plots:
             string = row[0]
 
-            datet[report["Sensor"]].append(row[0]);
-            tempt[report["Sensor"]].append(row[1]);
+            datet[report["Sensor"]].append(row[0])
+            tempt[report["Sensor"]].append(row[1])
 
             txt = string.split()
 
@@ -104,7 +104,7 @@ def processData():
     global points, diff
     prom=0
     for x in range(len(diff)):
-        prom+=diff[x];
+        prom+=diff[x]
     if(len(diff)>0):
      prom=prom/len(diff)
     cntDead = 0
@@ -116,8 +116,12 @@ def processData():
 
     report["difftimeSensor"]=prom
     report["totalpointsSensor"]=len(date)
-    report["biggestTimeSensor"]=max(diff)
-    report["smallestTimeSensor"]=min(diff)
+    if(len(diff) > 2):
+        report["biggestTimeSensor"]=max(diff)
+        report["smallestTimeSensor"]=min(diff)
+    else:
+        report["biggestTimeSensor"]=0
+        report["smallestTimeSensor"]=0
     report["totalpointsDead"]=cntDead
     if cntDead > 0:
         report["difftimeDead"] = (timebf/cntDead)
@@ -129,8 +133,8 @@ def extractEvents():
     global events
     events=[]
     #print('###########Event File summary')
-    if fileExist.exists(path + "data/tpmsEvent.txt"):
-      with open(path + 'data/tpmsEvent.txt', 'r') as csvfile:
+    if fileExist.exists(path + "tpmsEvent.txt"):
+      with open(path + 'tpmsEvent.txt', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter='\n')
         for row in plots:
             if(len(row)>0):
@@ -169,7 +173,7 @@ def processEvents():
                 y += 1
         if aux == 'TXFAI':
             z+=1
-    promedio = 0;
+    promedio = 0
     if (y-2) > 0:
         promedio = (prom/(y-2))
     timeEvents = timeEvents[2:]
@@ -192,20 +196,21 @@ def timeDiff(newtime, oldtime):
 
 def reportSensor():
     global summary, report
-    #x= report["Sensor"]-1
-    #for y in range(len(datet[x])):
-        #print('2 dimention list: ', datet[x][y], ' len(',x+1,'): ',len(datet[x]))
-    #print("Sensor: ",report["Sensor"])
-    #print("diff average S.: ", report["difftimeSensor"])
+    '''
+    x= report["Sensor"]-1
+    for y in range(len(datet[x])):
+        print('2 dimention list: ', datet[x][y], ' len(',x+1,'): ',len(datet[x]))
+    print("Sensor: ",report["Sensor"])
+    print("diff average S.: ", report["difftimeSensor"])
 
-    #print("Biggest diff S.: ", report["biggestTimeSensor"])
-    #print("Smallest diff S.: ", report["smallestTimeSensor"])
-    #print("Total dead S.: ", report["totalpointsDead"])
-    #print("diff average Dead S.: ", report["difftimeDead"])
-    #print("Total points Clean: ", report["totalpointsClean"])
-    #print("diff average Clean: ", report["difftimeClean"])
-    #print("Total points TxFail: ", report["totalpointsTxFail"])
-
+    print("Biggest diff S.: ", report["biggestTimeSensor"])
+    print("Smallest diff S.: ", report["smallestTimeSensor"])
+    print("Total dead S.: ", report["totalpointsDead"])
+    print("diff average Dead S.: ", report["difftimeDead"])
+    print("Total points Clean: ", report["totalpointsClean"])
+    print("diff average Clean: ", report["difftimeClean"])
+    print("Total points TxFail: ", report["totalpointsTxFail"])
+'''
     summary[report["Sensor"]].append((report["Sensor"]+1))#0
     summary[report["Sensor"]].append(round(report["difftimeSensor"],2))#1
     summary[report["Sensor"]].append(report["totalpointsSensor"])#2

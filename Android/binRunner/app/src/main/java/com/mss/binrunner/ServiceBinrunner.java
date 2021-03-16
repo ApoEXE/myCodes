@@ -96,9 +96,9 @@ public class ServiceBinrunner extends Service {
                 {
 
                     while(true) {
-                        Log.d(TAG, "STARTING cmdtpms");
-                        executeCommand("cmdtpms -i");
-                        Log.d(TAG,"CLOSED cmdtpms");
+                        Log.d(TAG, "STARTING cansend");
+                        executeCommand("tpmsLogger");
+                        Log.d(TAG,"CLOSED cansend");
                         Thread.sleep(1000);
                     }
 
@@ -130,7 +130,7 @@ public class ServiceBinrunner extends Service {
                 {
                     while(true) {
                         Log.d(TAG, "SAVING PID");
-                        executeCommand("ps | echo $(grep cmdtpms) > /sdcard/pid.txt ");
+                        executeCommand("ps | echo $(grep tpmsLogger) > /sdcard/pid.txt ");
                         Log.d(TAG, "SAVED PID /sdcard/pid.txt");
 
                         if (counter >= 360) {
