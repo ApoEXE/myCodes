@@ -1,10 +1,13 @@
 #include "shader.h"
-Shader::Shader(std::string filepath) {
+Shader::Shader()
+{
+}
+
+void Shader::createProgram(std::string filepath)
+{
     ShaderProgramSource source = ParseShaders(filepath);
     ID = CreateShader(source.VertexSource, source.FragmentSource);
 }
-
-
 Shader::ShaderProgramSource Shader::ParseShaders(const std::string &filepath)
 {
     std::ifstream stream(filepath);
@@ -40,11 +43,13 @@ Shader::ShaderProgramSource Shader::ParseShaders(const std::string &filepath)
             ss[(int)type] << line << "\n";
         }
     }
-    return {ss[0].str(), ss[1].str(),ss[2].str()};
+    return {ss[0].str(), ss[1].str(), ss[2].str()};
 }
 
 unsigned int Shader::CompileShader(unsigned int type, const std::string &source)
 {
+    //printf("type: %d \n", type);
+    //printf("%s \n", source.c_str());
     unsigned int id = glCreateShader(type);
     const char *src = source.c_str();
     glShaderSource(id, 1, &src, nullptr);
@@ -141,7 +146,7 @@ void Shader::setMat2(const std::string &name, const glm::mat2 &mat)
 // ------------------------------------------------------------------------
 void Shader::setMat3(const std::string &name, const glm::mat3 &mat)
 {
-   glUniformMatrix3fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, &mat[0][0]);
+    glUniformMatrix3fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, &mat[0][0]);
 }
 // ------------------------------------------------------------------------
 void Shader::setMat4(const std::string &name, const glm::mat4 &mat)

@@ -12,13 +12,14 @@ class Shader
 {
 public:
     // the program ID
-    Shader(std::string filepath);
+    Shader();
     unsigned int ID;
     void use();
     // utility uniform functions
     void setBool(const std::string &name, bool value) const;
     void setInt(const std::string &name, int value) const;
     void setFloat(const std::string &name, float value) const;
+    void createProgram(std::string filepath);
 
 private:
     struct ShaderProgramSource
@@ -30,6 +31,7 @@ private:
     unsigned int CreateShader(const std::string &vertexShader, const std::string &fragmentShader);
     unsigned int CompileShader(unsigned int type, const std::string &source);
     ShaderProgramSource ParseShaders(const std::string &filepath);
+    
 
 public:
 // activate the shader
