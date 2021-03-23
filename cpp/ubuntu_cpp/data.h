@@ -34,6 +34,7 @@ public:
     ~data();
     int init_GLFW_GLAD();
     void draw_loop();
+    
 };
 
 #endif
